@@ -5,111 +5,223 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
 <title>Leadership in Education 4-MAED-EM-H</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,700&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
-/* Layout: one reading column with a sticky section bar; the four weekends are the spine of the page. */
+/* Layout: a deep maroon masthead carrying a four-weekend progress track, then banded sections; the weekend timeline is the spine. */
 :root{
-  --bg:#fdfbf8; --surface:#ffffff; --tint:#f5ecdf; --ink:#241a1a; --muted:#6d6060; --line:#e2d6c4;
-  --maroon:#7b1113; --maroon-ink:#ffffff; --gold:#8a6a1f; --ok:#2f6b4a; --warn:#9a5b00;
-  --display:"Newsreader",Georgia,"Times New Roman",serif; --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --bg:#fbf8f4; --surface:#ffffff; --tint:#f4eadc; --ink:#231718; --muted:#6f5f5f; --line:#e4d7c5;
+  --maroon:#7b1113; --deep:#4e0a0c; --on-deep:#fff6ea; --on-deep-muted:#e2c9a8; --gold:#b08d3c; --gold-ink:#7d6220;
+  --ok:#2f6b4a; --warn:#a15c00; --shadow:0 1px 2px rgba(60,20,20,.06),0 8px 24px rgba(60,20,20,.07);
+  --display:"Fraunces",Georgia,"Times New Roman",serif; --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#181212; --surface:#211919; --tint:#2c2020; --ink:#f3ebe6; --muted:#b5a7a2; --line:#40302f;
-  --maroon:#e08a84; --maroon-ink:#1a1010; --gold:#d9b765; --ok:#7fc79f; --warn:#e6b160; color-scheme:dark } }
+  --bg:#171011; --surface:#211718; --tint:#2b1d1d; --ink:#f5ece6; --muted:#b9a8a2; --line:#412f2e;
+  --maroon:#e7928b; --deep:#3a0809; --on-deep:#fff6ea; --on-deep-muted:#d9bd98; --gold:#d6b25e; --gold-ink:#d6b25e;
+  --ok:#86cfa6; --warn:#ecb766; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme:dark } }
 :root[data-theme="dark"]{
-  --bg:#181212; --surface:#211919; --tint:#2c2020; --ink:#f3ebe6; --muted:#b5a7a2; --line:#40302f;
-  --maroon:#e08a84; --maroon-ink:#1a1010; --gold:#d9b765; --ok:#7fc79f; --warn:#e6b160; color-scheme:dark }
+  --bg:#171011; --surface:#211718; --tint:#2b1d1d; --ink:#f5ece6; --muted:#b9a8a2; --line:#412f2e;
+  --maroon:#e7928b; --deep:#3a0809; --on-deep:#fff6ea; --on-deep-muted:#d9bd98; --gold:#d6b25e; --gold-ink:#d6b25e;
+  --ok:#86cfa6; --warn:#ecb766; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme:dark }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
-.wrap{max-width:60rem;margin-inline:auto;padding-inline:1.1rem}
+.wrap{max-width:68rem;margin-inline:auto;padding-inline:1.25rem}
 a{color:var(--maroon);text-underline-offset:.15em}
-a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0}
-h1{font-size:clamp(2rem,6vw,3.1rem);font-weight:700}
-h2{font-size:1.65rem;font-weight:700;color:var(--maroon)}
-h3{font-size:1.2rem;font-weight:700}
-.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:.25rem}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.08;margin:0;font-weight:700}
+.eyebrow{font-family:var(--mono);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-ink)}
 .small{font-size:.9rem;color:var(--muted)}
-header.top{padding-block:2.2rem 1.4rem;border-bottom:1px solid var(--line)}
-header.top p.lead{max-width:42rem;margin:.6rem 0 0}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.2rem 1.5rem;margin-top:1.2rem;padding:0;list-style:none}
-.facts li{padding-block:.45rem;border-top:1px solid var(--line);min-width:0}
-.facts b{display:block;font-family:var(--mono);font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:400}
+
+/* masthead */
+.mast{background:var(--deep);color:var(--on-deep);position:relative;overflow:hidden}
+.mast::before{content:"2211";position:absolute;right:-2rem;top:-3.5rem;font-family:var(--display);font-weight:800;font-size:clamp(12rem,34vw,26rem);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(214,178,94,.22);pointer-events:none;user-select:none}
+.mast .wrap{position:relative;padding-block:3.2rem 2.6rem}
+.mast .eyebrow{color:var(--gold)}
+.mast h1{font-size:clamp(2.6rem,8.5vw,5.6rem);font-weight:800;letter-spacing:-.02em;margin-top:.7rem;max-width:12ch}
+.mast h1 em{font-style:italic;font-weight:500;color:var(--gold)}
+.mast p.lead{max-width:38rem;margin:1.1rem 0 0;color:var(--on-deep-muted);font-size:1.08rem}
+.track{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-top:2.2rem;padding:0;list-style:none}
+.track li{min-width:0;border-top:3px solid rgba(255,246,234,.22);padding-top:.6rem;font-family:var(--mono);font-size:.78rem;color:var(--on-deep-muted)}
+.track li b{display:block;font-family:var(--display);font-size:1.25rem;color:var(--on-deep);font-weight:700}
+.track li.past{border-top-color:var(--gold)} .track li.now{border-top-color:var(--gold);color:var(--on-deep)}
+.track li.now b::after{content:"now";font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:#2a1a05;border-radius:99px;padding:.1rem .5rem;margin-left:.5rem;vertical-align:middle}
+.mastgrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:2rem;align-items:end;margin-top:2.2rem}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem 1.5rem;margin:0;padding:0;list-style:none}
+.facts b{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:.15rem}
+.nowcard{background:var(--on-deep);color:#2a1516;border-radius:.9rem;padding:1.2rem 1.3rem;box-shadow:0 12px 40px rgba(0,0,0,.28);display:grid;gap:.4rem}
+.nowcard .eyebrow{color:#7b1113}
+.nowcard h3{font-size:1.35rem;color:#2a1516}
+.nowcard a{color:#7b1113;font-weight:700}
+
 nav.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
-nav.bar .wrap{display:flex;gap:1.1rem;overflow-x:auto;padding-block:.65rem;white-space:nowrap}
-nav.bar a{text-decoration:none;font-weight:600;font-size:.92rem;color:var(--ink)}
-nav.bar a:hover{color:var(--maroon)}
-section{padding-block:2.2rem;border-bottom:1px solid var(--line)}
-section>h2{margin-bottom:.9rem}
-.now{background:var(--maroon);color:var(--maroon-ink);border-radius:.5rem;padding:1.1rem 1.25rem;margin-top:1.4rem;display:grid;gap:.35rem}
-.now .eyebrow{color:var(--maroon-ink);opacity:.8}
-.now h3{font-size:1.35rem}
-.now a{color:var(--maroon-ink)}
-.week{display:grid;grid-template-columns:8.5rem 1fr;gap:.4rem 1.4rem;padding-block:1.2rem;border-top:1px solid var(--line)}
-.week:first-of-type{border-top:0}
-.week .when{font-family:var(--mono);font-size:.85rem;color:var(--muted)}
-.week .when strong{display:block;font-family:var(--display);font-size:1.5rem;color:var(--maroon);line-height:1.1}
-.week>div{min-width:0}
-.week ul{margin:.5rem 0 0;padding-left:1.1rem}
-.week li{margin-bottom:.25rem}
-.week.current{background:var(--tint);margin-inline:-.8rem;padding-inline:.8rem;border-radius:.5rem;border-top-color:transparent}
-.chip{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;padding:.1rem .5rem;border-radius:99px;border:1px solid var(--line);color:var(--muted);vertical-align:middle;white-space:nowrap}
-.chip.due{border-color:var(--warn);color:var(--warn)} .chip.done{border-color:var(--ok);color:var(--ok)} .chip.live{border-color:var(--maroon);color:var(--maroon)}
-.scroll{overflow-x:auto}
-table{border-collapse:collapse;width:100%;font-size:.95rem}
-th,td{text-align:left;padding:.6rem .7rem .6rem 0;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-family:var(--mono);font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:400}
-td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.5rem 2rem}
-.cols>div{min-width:0}
-.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:1rem;margin-block:1rem}
-.grade div{border-top:3px solid var(--maroon);padding-top:.5rem;min-width:0}
-.grade strong{font-family:var(--display);font-size:2.2rem;line-height:1;display:block;font-variant-numeric:tabular-nums}
-.note{background:var(--tint);border-radius:.5rem;padding:.9rem 1.1rem;margin-top:1rem}
-.copy{font:inherit;font-size:.82rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:.35rem;padding:.15rem .55rem;cursor:pointer;margin-left:.4rem}
-.email{font-family:var(--mono);font-size:.92rem;overflow-wrap:anywhere}
-ul.plain{list-style:none;padding:0;margin:0}
-ul.plain li{padding-block:.5rem;border-top:1px solid var(--line)}
-ul.plain li:first-child{border-top:0}
-footer{padding-block:1.6rem 2.5rem;color:var(--muted);font-size:.88rem}
-@media (max-width:34rem){ .week{grid-template-columns:1fr} }
-@media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth} }
+nav.bar .wrap{display:flex;gap:.4rem;overflow-x:auto;padding-block:.6rem;white-space:nowrap}
+nav.bar a{text-decoration:none;font-weight:600;font-size:.9rem;color:var(--ink);padding:.35rem .8rem;border-radius:99px}
+nav.bar a:hover{background:var(--tint);color:var(--maroon)}
+
+section{padding-block:3.4rem}
+section.band{background:var(--tint)}
+.head{display:grid;gap:.5rem;margin-bottom:1.6rem;max-width:44rem}
+.head h2{font-size:clamp(1.9rem,4.5vw,2.7rem);color:var(--ink)}
+.head h2 em{font-style:italic;font-weight:500;color:var(--maroon)}
+.head p{margin:0;color:var(--muted)}
+
+/* start cards */
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:.9rem;padding:1.15rem 1.2rem;box-shadow:var(--shadow);display:grid;gap:.45rem;align-content:start;min-width:0;text-decoration:none;color:var(--ink);transition:transform .18s ease,border-color .18s ease}
+a.card:hover{transform:translateY(-3px);border-color:var(--gold)}
+.card h3{font-size:1.18rem}
+.card .kind{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink)}
+.card .go{font-weight:700;color:var(--maroon);font-size:.92rem;margin-top:.2rem}
+.card.off{box-shadow:none;border-style:dashed}
+
+/* timeline */
+.timeline{position:relative;display:grid;gap:1.1rem}
+.timeline::before{content:"";position:absolute;left:1.55rem;top:1rem;bottom:1rem;width:2px;background:var(--line)}
+.wk{position:relative;display:grid;grid-template-columns:3.1rem minmax(0,1fr);gap:1.2rem}
+.wk .dot{width:3.1rem;height:3.1rem;border-radius:50%;background:var(--surface);border:2px solid var(--gold);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.35rem;color:var(--maroon);z-index:1}
+.wk.current .dot{background:var(--maroon);border-color:var(--maroon);color:var(--bg)}
+.wk .body{background:var(--surface);border:1px solid var(--line);border-radius:.9rem;padding:1.2rem 1.3rem;box-shadow:var(--shadow);min-width:0}
+.wk.current .body{border-color:var(--gold);border-width:2px}
+.wk .meta{display:flex;flex-wrap:wrap;gap:.4rem .7rem;align-items:center;font-family:var(--mono);font-size:.78rem;color:var(--muted);margin-bottom:.45rem}
+.wk h3{font-size:1.4rem}
+.wk ul{margin:.8rem 0 0;padding:0;list-style:none;display:grid;gap:.35rem}
+.wk li{padding-left:1.1rem;position:relative}
+.wk li::before{content:"";position:absolute;left:0;top:.62em;width:.45rem;height:.45rem;border-radius:50%;background:var(--gold)}
+.wk .taskline{margin:.9rem 0 0;padding-top:.8rem;border-top:1px dashed var(--line)}
+.chip{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;padding:.12rem .55rem;border-radius:99px;border:1px solid var(--line);color:var(--muted);white-space:nowrap;background:var(--surface)}
+.chip.due{border-color:var(--warn);color:var(--warn)} .chip.done{border-color:var(--ok);color:var(--ok)} .chip.live{border-color:var(--maroon);color:var(--maroon)} .chip.gold{border-color:var(--gold);color:var(--gold-ink)}
+
+/* modules */
+.mods{display:grid;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));gap:1rem}
+.mod{grid-template-columns:auto minmax(0,1fr);gap:.2rem 1rem;align-items:start}
+.mod .n{font-family:var(--display);font-weight:800;font-size:2.6rem;line-height:.9;color:var(--gold);grid-row:span 3}
+.mod h3{font-size:1.08rem;line-height:1.2}
+
+/* tasks */
+.tasks{display:grid;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));gap:1rem}
+.task{grid-template-rows:auto auto 1fr auto}
+.cal{display:inline-grid;justify-items:center;width:3.6rem;border-radius:.6rem;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.cal span{width:100%;text-align:center;background:var(--maroon);color:var(--bg);font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.12rem 0}
+.cal b{font-family:var(--display);font-size:1.5rem;font-weight:800;line-height:1.25;font-variant-numeric:tabular-nums}
+.task .toprow{display:flex;justify-content:space-between;align-items:flex-start;gap:.6rem}
+
+/* readings */
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.1rem}
+.tabs button{font:inherit;font-weight:700;font-size:.92rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:99px;padding:.45rem 1rem;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--maroon);border-color:var(--maroon);color:var(--bg)}
+.reads{list-style:none;margin:0;padding:0;display:grid;gap:.6rem;counter-reset:r}
+.reads li{counter-increment:r;display:grid;grid-template-columns:2.2rem minmax(0,1fr);gap:.6rem;align-items:baseline;background:var(--surface);border:1px solid var(--line);border-radius:.7rem;padding:.8rem 1rem}
+.reads li::before{content:counter(r,decimal-leading-zero);font-family:var(--mono);font-size:.8rem;color:var(--gold-ink)}
+.reads a{font-weight:600}
+
+/* grading */
+.bar{display:flex;height:3.4rem;border-radius:.7rem;overflow:hidden;font-family:var(--display);font-weight:800;font-size:1.3rem}
+.bar div{display:grid;place-items:center;min-width:0}
+.bar .a{flex:20;background:var(--gold);color:#2a1a05} .bar .b{flex:50;background:var(--maroon);color:var(--bg)} .bar .c{flex:30;background:var(--deep);color:var(--on-deep)}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1rem 1.5rem;margin-top:1rem;padding:0;list-style:none}
+.legend li{min-width:0;padding-left:1.2rem;position:relative}
+.legend li::before{content:"";position:absolute;left:0;top:.45em;width:.7rem;height:.7rem;border-radius:.2rem;background:var(--sw)}
+.formula{margin-top:1.6rem;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:1rem}
+.formula>div{border-radius:.9rem;padding:1.2rem 1.3rem;min-width:0}
+.formula .f{background:var(--deep);color:var(--on-deep)} .formula .f strong{font-family:var(--display);font-size:clamp(1.15rem,2.6vw,1.6rem);display:block}
+.formula .f span{color:var(--on-deep-muted);font-size:.92rem}
+.formula .p{background:var(--surface);border:1px solid var(--line);display:flex;gap:1rem;align-items:center}
+.formula .p strong{font-family:var(--display);font-size:2.6rem;font-weight:800;color:var(--maroon);line-height:1}
+.exams{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem;margin-top:1rem}
+
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem}
+.email{font-family:var(--mono);font-size:.9rem;overflow-wrap:anywhere}
+.copy{font:inherit;font-size:.8rem;font-weight:700;border:1px solid var(--line);background:var(--tint);color:var(--ink);border-radius:99px;padding:.2rem .7rem;cursor:pointer;margin-left:.4rem}
+
+.quote{background:var(--deep);color:var(--on-deep);padding-block:3.6rem}
+.quote blockquote{margin:0;font-family:var(--display);font-size:clamp(1.5rem,3.8vw,2.5rem);line-height:1.2;font-weight:500;max-width:46rem;text-wrap:balance}
+.quote blockquote em{color:var(--gold)}
+.quote cite{display:block;margin-top:1.1rem;font-family:var(--mono);font-style:normal;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-deep-muted)}
+footer{padding-block:1.6rem 2.6rem;color:var(--muted);font-size:.88rem}
+
+@media (max-width:46rem){ .mastgrid,.formula{grid-template-columns:1fr} .track{grid-template-columns:repeat(2,1fr)} .wk{grid-template-columns:2.4rem minmax(0,1fr);gap:.8rem} .wk .dot{width:2.4rem;height:2.4rem;font-size:1.05rem} .timeline::before{left:1.2rem} }
+@media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth}
+  .mast h1,.mast .lead,.track,.mastgrid{animation:rise .7s cubic-bezier(.2,.7,.2,1) both} .mast .lead{animation-delay:.08s} .track{animation-delay:.16s} .mastgrid{animation-delay:.24s}
+  @keyframes rise{from{transform:translateY(14px);opacity:.01}to{transform:none;opacity:1}} }
 </style>
 
 </head>
 <body>
-<header class="top"><div class="wrap">
+<header class="mast"><div class="wrap">
   <div class="eyebrow">MAEEMNGT 2211 · Section 4-MAED-EM-H · Module 4</div>
-  <h1>Leadership in Education</h1>
-  <p class="lead">Class site for the MAEd in Educational Management, 1st Semester, SY 2026–2027, University of Perpetual Help System DALTA Graduate School. Everything you need for the four weekends is linked from this page.</p>
-  <ul class="facts">
-    <li><b>Live sessions</b>Saturdays, 7:00–11:00 AM, online</li>
-    <li><b>Dates</b>October 10 – November 1, 2026</li>
-    <li><b>Professor</b>Dr. Carlo S. Villalona, LPT, PhD</li>
-    <li><b>Learning time</b>64 hours: 16 live, 16 reading, 32 independent</li>
-  </ul>
-  <div class="now" id="now" aria-live="polite"></div>
+  <h1>Leadership <em>in</em> Education</h1>
+  <p class="lead">Class site for the MAEd in Educational Management, 1st Semester, SY 2026–2027, University of Perpetual Help System DALTA Graduate School.</p>
+  <ol class="track" id="track" aria-label="Four weekends"></ol>
+  <div class="mastgrid">
+    <ul class="facts">
+      <li><b>Live sessions</b>Saturdays, 7:00–11:00 AM, online</li>
+      <li><b>Dates</b>October 10 – November 1, 2026</li>
+      <li><b>Professor</b>Dr. Carlo S. Villalona, LPT, PhD</li>
+      <li><b>Learning time</b>64 hours: 16 live, 16 reading, 32 independent</li>
+    </ul>
+    <div class="nowcard" id="now" aria-live="polite"></div>
+  </div>
 </div></header>
 
 <nav class="bar" aria-label="Sections"><div class="wrap">
   <a href="#start">Start here</a><a href="#schedule">Schedule</a><a href="#modules">Modules</a><a href="#tasks">Tasks</a><a href="#readings">Readings</a><a href="#grading">Grading</a><a href="#policies">Policies</a>
 </div></nav>
 
-<main class="wrap">
-<section id="start"><h2>Start here</h2><ul class="plain" id="startList"></ul></section>
-<section id="schedule"><h2>Four weekends</h2><p class="small">Each week: a live Saturday session, four hours of assigned reading afterward, and eight hours of independent work on the weekly task.</p><div id="weeks"></div></section>
-<section id="modules"><h2>Session companion modules</h2><p class="small">Read your group’s module before your reporting day. Each one is the background for the professor’s 15-minute lecture and the starting point for your inquiry question.</p><div class="scroll"><table><thead><tr><th>Session</th><th>Date</th><th>Module</th><th>Group</th></tr></thead><tbody id="modRows"></tbody></table></div></section>
-<section id="tasks"><h2>Asynchronous tasks</h2><p class="small">All four tasks study the same institution and the same improvement priority. Each is scored out of 100.</p><div class="scroll"><table><thead><tr><th>Task</th><th>What you submit</th><th>Due</th><th>Status</th></tr></thead><tbody id="taskRows"></tbody></table></div><p class="small">Filename: <span class="email">AT1_LastName_FirstName</span> (change the number for each task). Upload to the shared course folder.</p></section>
-<section id="readings"><h2>Required readings</h2><p id="readLead"></p><div class="cols" id="readCols"></div></section>
-<section id="grading"><h2>Grading</h2><p>A Midterm Grade covers Weeks 1–2 and a Pre-Final Grade covers Weeks 3–4. Each uses the same three components.</p>
-  <div class="grade"><div><strong>20%</strong>Recitation, participation, oral reporting, assignments</div><div><strong>50%</strong>Special projects and research: the asynchronous tasks</div><div><strong>30%</strong>Major examination</div></div>
-  <p><strong>Final Grade = (Midterm Grade + Pre-Final Grade) ÷ 2.</strong> For MAEd students the lowest grade with credit is 2.00 (87–89%).</p>
-  <div class="scroll"><table><thead><tr><th>Examination</th><th>Covers</th><th>When</th></tr></thead><tbody><tr><td>Midterm</td><td>Topics 1–6</td><td>End of Week 2; window to be announced</td></tr><tr><td>Final</td><td>Topics 7–10, integrative</td><td>End of Week 4; window to be announced</td></tr></tbody></table></div></section>
-<section id="policies"><h2>Policies</h2><div class="cols">
-  <div><h3>Communication</h3><p>Official communication (concerns, submissions, grade inquiries) goes through the professor’s email only:</p><p><span class="email" id="email">carlo.villalon@perpetualdalta.edu.ph</span><button class="copy" id="copyEmail" type="button">Copy</button></p><p class="small">The class Facebook group chat is for quick announcements and general engagement.</p></div>
-  <div><h3>Integrity and AI</h3><p>Submitted work must be your own analysis of your own institution, cited in APA 7th edition. AI tools may help you brainstorm, check language, or organize notes if you disclose the tool and its use at the end of the paper.</p><p class="small">Never enter learners’ or colleagues’ personal information into an AI tool or public website.</p></div>
-  <div><h3>Confidentiality</h3><p>When you write or present about your institution, remove the names of learners, colleagues, and parents, and do not share confidential records.</p></div>
+<main>
+<section id="start"><div class="wrap">
+  <div class="head"><div class="eyebrow">Before anything else</div><h2>Start <em>here</em></h2><p>Five documents set up the whole module. Open the Course Guide first.</p></div>
+  <div class="grid4" id="startList"></div>
 </div></section>
+
+<section id="schedule" class="band"><div class="wrap">
+  <div class="head"><div class="eyebrow">October 10 – November 1</div><h2>Four <em>weekends</em></h2><p>Each week has a live Saturday session, four hours of assigned reading afterward, and eight hours of independent work on the weekly task.</p></div>
+  <div class="timeline" id="weeks"></div>
+</div></section>
+
+<section id="modules"><div class="wrap">
+  <div class="head"><div class="eyebrow">Eight reporting sessions</div><h2>Session <em>companion modules</em></h2><p>Read your group’s module before your reporting day. It is the background for the professor’s 15-minute lecture and the starting point for your inquiry question.</p></div>
+  <div class="mods" id="modRows"></div>
+</div></section>
+
+<section id="tasks" class="band"><div class="wrap">
+  <div class="head"><div class="eyebrow">One institution, four tasks</div><h2>Asynchronous <em>tasks</em></h2><p>All four tasks study the same institution and the same improvement priority. Each is scored out of 100.</p></div>
+  <div class="tasks" id="taskRows"></div>
+  <p class="small" style="margin-top:1rem">Filename: <span class="email">AT1_LastName_FirstName</span> (change the number for each task). Upload to the shared course folder.</p>
+</div></section>
+
+<section id="readings"><div class="wrap">
+  <div class="head"><div class="eyebrow">Saturday, after class</div><h2>Required <em>readings</em></h2><p id="readLead"></p></div>
+  <div class="tabs" role="tablist" id="readTabs"></div>
+  <ol class="reads" id="readList"></ol>
+</div></section>
+
+<section id="grading" class="band"><div class="wrap">
+  <div class="head"><div class="eyebrow">From the syllabus</div><h2>How your grade <em>is computed</em></h2><p>A Midterm Grade covers Weeks 1–2 and a Pre-Final Grade covers Weeks 3–4. Each uses the same three components.</p></div>
+  <div class="bar" role="img" aria-label="20 percent class standing, 50 percent projects, 30 percent examination"><div class="a">20%</div><div class="b">50%</div><div class="c">30%</div></div>
+  <ul class="legend">
+    <li style="--sw:var(--gold)"><strong>Class standing</strong><br><span class="small">Recitation, participation, oral reporting, assignments</span></li>
+    <li style="--sw:var(--maroon)"><strong>Special projects and research</strong><br><span class="small">The asynchronous tasks, two in each grading period</span></li>
+    <li style="--sw:var(--deep)"><strong>Major examination</strong><br><span class="small">Midterm and Final Examinations</span></li>
+  </ul>
+  <div class="formula">
+    <div class="f"><strong>Final Grade = (Midterm Grade + Pre-Final Grade) ÷ 2</strong><span>Midterm Grade: Weeks 1–2. Pre-Final Grade: Weeks 3–4.</span></div>
+    <div class="p"><strong>2.00</strong><span>Lowest grade with credit for MAEd students (87–89%)</span></div>
+  </div>
+  <div class="exams">
+    <div class="card"><div class="kind">End of Week 2</div><h3>Midterm Examination</h3><div class="small">Topics 1–6. Window to be announced.</div></div>
+    <div class="card"><div class="kind">End of Week 4</div><h3>Final Examination</h3><div class="small">Topics 7–10, integrative. Window to be announced.</div></div>
+  </div>
+</div></section>
+
+<section id="policies"><div class="wrap">
+  <div class="head"><div class="eyebrow">Working together</div><h2>Class <em>policies</em></h2></div>
+  <div class="cols">
+    <div class="card"><h3>Communication</h3><p style="margin:0">Official communication (concerns, submissions, grade inquiries) goes through the professor’s email only.</p><p style="margin:0"><span class="email" id="email">carlo.villalon@perpetualdalta.edu.ph</span><button class="copy" id="copyEmail" type="button">Copy</button></p><p class="small" style="margin:0">The class Facebook group chat is for quick announcements and general engagement.</p></div>
+    <div class="card"><h3>Integrity and AI</h3><p style="margin:0">Submitted work must be your own analysis of your own institution, cited in APA 7th edition. AI tools may help you brainstorm, check language, or organize notes if you disclose the tool and its use at the end of the paper.</p><p class="small" style="margin:0">Never enter learners’ or colleagues’ personal information into an AI tool or public website.</p></div>
+    <div class="card"><h3>Confidentiality</h3><p style="margin:0">When you write or present about your institution, remove the names of learners, colleagues, and parents, and do not share confidential records.</p></div>
+  </div>
+</div></section>
+
+<div class="quote"><div class="wrap"><blockquote>Leadership in education is not a position that one waits to be given. It is work done on purpose, <em>with people, on evidence, and for learners.</em></blockquote><cite>Core course philosophy · Course Guide, Section XVII</cite></div></div>
 </main>
 <footer><div class="wrap">Class site maintained by Dr. Carlo S. Villalona for Section 4-MAED-EM-H. It is not an official University website. Materials are for use in this class only. <span id="updated"></span></div></footer>
 
@@ -118,11 +230,11 @@ footer{padding-block:1.6rem 2.5rem;color:var(--muted);font-size:.88rem}
 const D = (id) => "https://drive.google.com/file/d/" + id + "/view";
 const COURSE = {
   start: [
-    ["Module 4 Course Guide", "Schedule, readings, assessment plan, final portfolio.", D("1pliEi3QiQiYps9k7m_VtoV05N89IYCnE")],
-    ["Orientation and Course Introduction Module", "How the course runs, and an introduction to the subject.", D("1WbmQooHav7U1HuK2dYAUr7U_cZ2RplPs")],
-    ["Orientation slides", "The deck used in the October 10 session.", D("1UNUgk95yvBhJYGtSBjV-JeHXBatAjM0D")],
-    ["Masteral Learner Profile template", "Fill in the boxes, add a photo, and share before the end of Week 1.", D("1e1nOMlOOrJQDT0XaowGnzg_V02bREIeH")],
-    ["Conference-Style Reporting and Companion Module guide", "Running orders, inquiry questions, and rubrics for October 17, 24, and 31.", ""],
+    ["Module 4 Course Guide", "Schedule, readings, assessment plan, final portfolio.", D("1pliEi3QiQiYps9k7m_VtoV05N89IYCnE"), "PDF"],
+    ["Orientation and Course Introduction Module", "How the course runs, and an introduction to the subject.", D("1WbmQooHav7U1HuK2dYAUr7U_cZ2RplPs"), "PDF"],
+    ["Orientation slides", "The deck used in the October 10 session.", D("1UNUgk95yvBhJYGtSBjV-JeHXBatAjM0D"), "Slides"],
+    ["Masteral Learner Profile template", "Fill in the boxes, add a photo, and share before the end of Week 1.", D("1e1nOMlOOrJQDT0XaowGnzg_V02bREIeH"), "Template"],
+    ["Conference-Style Reporting and Companion Module guide", "Running orders, inquiry questions, and rubrics for October 17, 24, and 31.", "", "Guide"],
   ],
   weeks: [
     { n: 1, sat: "2026-10-10", label: "Oct 10–11", q: "What is educational leadership, and where is my school now?", items: ["Orientation and getting to know you", "Topic 1: Contemporary Foundations of Educational Leadership", "Topic 2: Strategic Leadership and Organizational Development", "Topic 3: Instructional Leadership for Teaching Excellence and Student Success"], mode: "Professor-led session", task: 1 },
@@ -163,40 +275,57 @@ const link = (text, url) => url ? `<a href="${esc(url)}" target="_blank" rel="no
 // today's date in Manila, as YYYY-MM-DD
 const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Manila", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
 const addDays = (iso, n) => { const d = new Date(iso + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
-const nice = (iso) => new Date(iso + "T00:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", weekday: "short", month: "short", day: "numeric" });
+const fmt = (iso, o) => new Date(iso + "T00:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", ...o });
+const nice = (iso) => fmt(iso, { weekday: "short", month: "short", day: "numeric" });
 const daysTo = (iso) => Math.round((new Date(iso + "T00:00:00Z") - new Date(today + "T00:00:00Z")) / 864e5);
 
 // a week runs from the Monday before its Saturday to the following Sunday
 const current = COURSE.weeks.find((w) => today >= addDays(w.sat, -5) && today <= addDays(w.sat, 1));
 const nextTask = COURSE.tasks.find((t) => t[3] >= today);
 
-$("startList").innerHTML = COURSE.start.map(([t, d, u]) => `<li><strong>${link(t, u)}</strong><br><span class="small">${esc(d)}</span></li>`).join("");
+$("track").innerHTML = COURSE.weeks.map((w) => `<li class="${current === w ? "now" : today > addDays(w.sat, 1) ? "past" : ""}"><b>Week ${w.n}</b>${esc(w.label)}</li>`).join("");
+
+$("startList").innerHTML = COURSE.start.map(([t, d, u, kind]) => u
+  ? `<a class="card" href="${esc(u)}" target="_blank" rel="noopener"><div class="kind">${esc(kind || "File")}</div><h3>${esc(t)}</h3><div class="small">${esc(d)}</div><div class="go">Open →</div></a>`
+  : `<div class="card off"><div class="kind">${esc(kind || "File")}</div><h3>${esc(t)}</h3><div class="small">${esc(d)}</div><div><span class="chip">to be posted</span></div></div>`).join("");
 
 $("weeks").innerHTML = COURSE.weeks.map((w) => {
   const t = COURSE.tasks[w.task - 1];
-  return `<div class="week${current === w ? " current" : ""}"><div class="when"><strong>Week ${w.n}</strong>${esc(w.label)}${current === w ? '<br><span class="chip live">this week</span>' : ""}</div>
-  <div><h3>${esc(w.q)}</h3><p class="small">${esc(w.mode)} · Saturday ${esc(nice(w.sat).replace(/^Sat, /, ""))}, 7:00–11:00 AM</p><ul>${w.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>
-  <p><strong>Task ${t[0]}:</strong> ${link(t[1], t[4] ? D(t[4]) : "")} · due ${esc(nice(t[3]))}</p></div></div>`;
+  return `<article class="wk${current === w ? " current" : ""}"><div class="dot" aria-hidden="true">${w.n}</div><div class="body">
+  <div class="meta"><span>Week ${w.n} · ${esc(w.label)}</span><span class="chip gold">${esc(w.mode)}</span>${current === w ? '<span class="chip live">this week</span>' : ""}</div>
+  <h3>${esc(w.q)}</h3><div class="small">Saturday, ${esc(fmt(w.sat, { month: "long", day: "numeric" }))} · 7:00–11:00 AM</div>
+  <ul>${w.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>
+  <p class="taskline"><strong>Task ${t[0]}:</strong> ${link(t[1], t[4] ? D(t[4]) : "")} <span class="small">· due ${esc(nice(t[3]))}</span></p></div></article>`;
 }).join("");
 
-$("modRows").innerHTML = COURSE.modules.map(([n, d, t, id]) => `<tr><td class="num">${n}</td><td class="num">${esc(nice(d))}</td><td>${link(t, id ? D(id) : "")}</td><td class="num">Group ${n}</td></tr>`).join("");
+$("modRows").innerHTML = COURSE.modules.map(([n, d, t, id]) => {
+  const inner = `<div class="n">${n}</div><div class="kind">${esc(nice(d))} · Group ${n}</div><h3>${esc(t)}</h3>${id ? '<div class="go">Open →</div>' : '<div><span class="chip">to be posted</span></div>'}`;
+  return id ? `<a class="card mod" href="${esc(D(id))}" target="_blank" rel="noopener">${inner}</a>` : `<div class="card mod off">${inner}</div>`;
+}).join("");
 
 $("taskRows").innerHTML = COURSE.tasks.map(([n, t, what, due, id]) => {
   const k = daysTo(due);
   const chip = k < 0 ? '<span class="chip done">closed</span>' : k <= 7 ? `<span class="chip due">${k === 0 ? "due today" : "due in " + k + (k === 1 ? " day" : " days")}</span>` : '<span class="chip">upcoming</span>';
-  return `<tr><td class="num">${n}</td><td><strong>${link(t, id ? D(id) : "")}</strong><br><span class="small">${esc(what)}</span></td><td class="num">${esc(nice(due))}</td><td>${chip}</td></tr>`;
+  return `<article class="card task"><div class="toprow"><div class="cal" aria-label="Due ${esc(nice(due))}"><span>${esc(fmt(due, { month: "short" }))}</span><b>${esc(fmt(due, { day: "numeric" }))}</b></div>${chip}</div>
+  <div class="kind">Task ${n} · due ${esc(nice(due))}</div><h3>${esc(t)}</h3><div class="small">${esc(what)}</div>${id ? `<a class="go" href="${esc(D(id))}" target="_blank" rel="noopener">Open guidelines →</a>` : ""}</article>`;
 }).join("");
 
-$("readLead").innerHTML = `Read the week’s required readings on Saturday after class, before starting the Sunday task. The full list, with what to read in each and where it is used, is in the ${link("Required Readings and Reading Guide", COURSE.readingGuide)}.`;
-$("readCols").innerHTML = COURSE.weeks.map((w) => `<div><div class="eyebrow">Week ${w.n} · ${esc(w.label)}</div><ul class="plain">${COURSE.readings[w.n].map(([t, u]) => `<li>${link(t, u)}</li>`).join("")}</ul></div>`).join("");
+$("readLead").innerHTML = `Read the week’s required readings before starting the Sunday task. What to read in each, and where it is used, is in the ${link("Required Readings and Reading Guide", COURSE.readingGuide)}.`;
+let readWeek = (current || COURSE.weeks[0]).n;
+function showReads() {
+  $("readTabs").innerHTML = COURSE.weeks.map((w) => `<button type="button" role="tab" id="tab-w${w.n}" data-w="${w.n}" aria-selected="${w.n === readWeek}">Week ${w.n} <span style="font-weight:400">· ${esc(w.label)}</span></button>`).join("");
+  $("readList").innerHTML = COURSE.readings[readWeek].map(([t, u]) => `<li><span>${link(t, u)}</span></li>`).join("");
+}
+$("readTabs").addEventListener("click", (e) => { const b = e.target.closest("button[data-w]"); if (b) { readWeek = +b.dataset.w; showReads(); $("tab-w" + readWeek).focus(); } });
+showReads();
 
-// "now" panel
+// "now" card
 (function () {
-  const first = COURSE.weeks[0], last = COURSE.weeks[COURSE.weeks.length - 1];
+  const first = COURSE.weeks[0];
   let h = "";
   if (today < addDays(first.sat, -5)) h = `<div class="eyebrow">Before the module</div><h3>Classes begin ${esc(nice(first.sat))}, 7:00 AM</h3><div>Read the Course Guide and complete your Masteral Learner Profile.</div>`;
-  else if (current) h = `<div class="eyebrow">This week · Week ${current.n}</div><h3>${esc(current.q)}</h3><div>Live session ${esc(nice(current.sat))}, 7:00–11:00 AM.${nextTask ? ` Next deadline: Task ${nextTask[0]}, ${esc(nice(nextTask[3]))}.` : ""} <a href="#schedule">See the week</a></div>`;
-  else if (nextTask) h = `<div class="eyebrow">Sessions completed</div><h3>Task ${nextTask[0]} is due ${esc(nice(nextTask[3]))}</h3><div><a href="#tasks">See the task</a></div>`;
+  else if (current) h = `<div class="eyebrow">This week · Week ${current.n}</div><h3>${esc(current.q)}</h3><div>Live session ${esc(nice(current.sat))}, 7:00–11:00 AM.${nextTask ? ` Next deadline: Task ${nextTask[0]}, ${esc(nice(nextTask[3]))}.` : ""}</div><a href="#schedule">See the week →</a>`;
+  else if (nextTask) h = `<div class="eyebrow">Sessions completed</div><h3>Task ${nextTask[0]} is due ${esc(nice(nextTask[3]))}</h3><a href="#tasks">See the task →</a>`;
   else h = `<div class="eyebrow">Module 4</div><h3>The module has ended</h3><div>Thank you for the work you put into it.</div>`;
   $("now").innerHTML = h;
 })();
