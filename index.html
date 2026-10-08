@@ -179,7 +179,7 @@ footer{padding-block:1.6rem 2.6rem;color:var(--muted);font-size:.88rem}
 </div></section>
 
 <section id="modules"><div class="wrap">
-  <div class="head"><div class="eyebrow">Eight reporting sessions</div><h2>Session <em>companion modules</em></h2><p>Read your group’s module before your reporting day. It is the background for the professor’s 15-minute lecture and the starting point for your inquiry question.</p></div>
+  <div class="head"><div class="eyebrow">Eight reporting sessions</div><h2>Session <em>companion modules</em></h2><p>Read your group’s module before your reporting day. It is the background for the professor’s 15-minute lecture and the starting point for your inquiry question. Week 1 is professor-led and has no session module; its three topics are covered by the Course Guide and the Orientation Module.</p></div>
   <div class="mods" id="modRows"></div>
 </div></section>
 
@@ -208,8 +208,8 @@ footer{padding-block:1.6rem 2.6rem;color:var(--muted);font-size:.88rem}
     <div class="p"><strong>2.00</strong><span>Lowest grade with credit for MAEd students (87–89%)</span></div>
   </div>
   <div class="exams">
-    <div class="card"><div class="kind">End of Week 2</div><h3>Midterm Examination</h3><div class="small">Topics 1–6. Window to be announced.</div></div>
-    <div class="card"><div class="kind">End of Week 4</div><h3>Final Examination</h3><div class="small">Topics 7–10, integrative. Window to be announced.</div></div>
+    <div class="card"><div class="kind">End of Week 2</div><h3>Midterm Examination</h3><div class="small">Covers Weeks 1–2: the three Week 1 topics (foundations, strategic leadership, instructional leadership) and Sessions 1–3. Window to be announced.</div></div>
+    <div class="card"><div class="kind">End of Week 4</div><h3>Final Examination</h3><div class="small">Covers Weeks 3–4: Sessions 4–8, with integrative items across the whole course. Window to be announced.</div></div>
   </div>
 </div></section>
 
@@ -238,10 +238,10 @@ const COURSE = {
     ["Conference-Style Reporting and Companion Module guide", "Running orders, inquiry questions, and rubrics for October 17, 24, and 31.", "", "Guide"],
   ],
   weeks: [
-    { n: 1, sat: "2026-10-10", label: "Oct 10–11", q: "What is educational leadership, and where is my school now?", items: ["Orientation and getting to know you", "Topic 1: Contemporary Foundations of Educational Leadership", "Topic 2: Strategic Leadership and Organizational Development", "Topic 3: Instructional Leadership for Teaching Excellence and Student Success"], mode: "Professor-led session", task: 1 },
-    { n: 2, sat: "2026-10-17", label: "Oct 17–18", q: "How do culture, policy, and resources shape what a leader can do?", items: ["Session 1 (Group 1): Culture, Change, and Innovation", "Session 2 (Group 2): Governance, Policy, and Systems Leadership", "Session 3 (Group 3): Resource and Financial Leadership", "Midterm Examination at the end of the week"], mode: "Conference-style reporting", task: 2 },
+    { n: 1, sat: "2026-10-10", label: "Oct 10–11", q: "What is educational leadership, and where is my school now?", items: ["Orientation and getting to know you", "Contemporary Foundations of Educational Leadership", "Strategic Leadership and Organizational Development", "Instructional Leadership for Teaching Excellence and Student Success"], mode: "Professor-led session", task: 1 },
+    { n: 2, sat: "2026-10-17", label: "Oct 17–18", q: "How do culture, policy, and resources shape what a leader can do?", items: ["Session 1 (Group 1): Culture, Change, and Innovation", "Session 2 (Group 2): Governance, Policy, and Systems Leadership", "Session 3 (Group 3): Resource and Financial Leadership", "Midterm Examination at the end of the week (Weeks 1–2)"], mode: "Conference-style reporting", task: 2 },
     { n: 3, sat: "2026-10-24", label: "Oct 24–25", q: "How do leaders develop people and decide rightly?", items: ["Session 4 (Group 4): Human Capital and Talent Development", "Session 5 (Group 5): Educational Law for School Leaders", "Session 6 (Group 6): Ethical Leadership, Equity, and Inclusion"], mode: "Conference-style reporting", task: 3 },
-    { n: 4, sat: "2026-10-31", label: "Oct 31–Nov 1", q: "How do leaders take a school forward, digitally and with its community?", items: ["Session 7 (Group 7): Digital Transformation and AI", "Session 8 (Group 8): Community and Stakeholder Engagement", "Leadership Improvement Forum and course synthesis", "Final Examination at the end of the week"], mode: "Conference-style reporting", task: 4 },
+    { n: 4, sat: "2026-10-31", label: "Oct 31–Nov 1", q: "How do leaders take a school forward, digitally and with its community?", items: ["Session 7 (Group 7): Digital Transformation and AI", "Session 8 (Group 8): Community and Stakeholder Engagement", "Leadership Improvement Forum and course synthesis", "Final Examination at the end of the week (Weeks 3–4, integrative)"], mode: "Conference-style reporting", task: 4 },
   ],
   modules: [
     [1, "2026-10-17", "Leading Organizational Culture, Change, and Innovation", "1fA-9Vn7VoEFLLjijhIxjfH2wThwZgUAR"],
