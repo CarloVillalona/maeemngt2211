@@ -2,6 +2,8 @@
 
 Class website for Module 4, 1st Semester, SY 2026–2027. One page, no build step.
 
+Maintained by Carlo S. Villalona, LPT, PhD · carlo.villalon@perpetualdalta.edu.ph
+
 ## Files
 
 | File | Purpose |
