@@ -31,7 +31,7 @@ All course data is in one block near the bottom of `index.html`, between
 
 | To change | Edit |
 |---|---|
-| A document link | The Drive file ID in `start`, `modules`, or `tasks` (the long code in a Drive link between `/d/` and `/view`) |
+| A document link | The Drive file ID (the learner profile uses a full Canva link instead) in `start`, `modules`, or `tasks` (the long code in a Drive link between `/d/` and `/view`) |
 | A due date | The date in `tasks`, written `YYYY-MM-DD` |
 | A session date or topic | `weeks` |
 | Weekly readings | `readings` |
