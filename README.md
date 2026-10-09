@@ -9,6 +9,7 @@ Maintained by Carlo S. Villalona, LPT, PhD · carlo.villalon@perpetualdalta.edu.
 | File | Purpose |
 |---|---|
 | `index.html` | The whole site: content, styles, and script |
+| `assets/professor.jpg` | The professor's portrait |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
 | `README.md` | This guide |
 
@@ -26,17 +27,17 @@ Maintained by Carlo S. Villalona, LPT, PhD · carlo.villalon@perpetualdalta.edu.
 
 ## Updating the site
 
-All course data is in one block near the bottom of `index.html`, between
-`EDIT HERE: course data` and `end of course data`. Edit it on GitHub with the pencil icon and commit.
+The page is plain HTML with no build step, laid out in the same sections as the PHDENG 2214 class site: About, Professor, Start here, Schedule, Modules, Tasks, Reporting, Profile, Field, Readings, Grading, Standards, Policies. Edit `index.html` on GitHub with the pencil icon and commit.
 
-| To change | Edit |
+| To change | Look for |
 |---|---|
-| A document link | The Drive file ID (the learner profile uses a full Canva link instead) in `start`, `modules`, or `tasks` (the long code in a Drive link between `/d/` and `/view`) |
-| A due date | The date in `tasks`, written `YYYY-MM-DD` |
-| A session date or topic | `weeks` |
-| Weekly readings | `readings` |
-| The "last updated" line | `updated` |
+| A document link | The Drive link in the matching section (`drive.google.com/file/d/<ID>/view`); the learner profile uses a Canva link |
+| A due date | The `Due Friday, ...` labels in the Schedule and Tasks sections (each date appears in both) |
+| Examination dates | The two `exam` cards at the end of the Schedule section |
+| Group sizes and inquiry questions | The Reporting section (`id="conference"`) |
+| Weekly readings | The Readings section (`id="readings"`) |
+| The professor's photo | Replace `assets/professor.jpg` (720 x 900) |
 
-An empty link (`""`) shows the item with a "to be posted" label. The Conference-Style Reporting guide is currently set this way.
+The "This week" label on the schedule sets itself from the date in Manila time.
 
-The banner at the top and the task status labels update by themselves from the date in Manila time.
+For deadlines, the website states that it takes precedence over the PDFs, so keep its dates current.

@@ -1,342 +1,1189 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex">
 <meta name="author" content="Carlo S. Villalona, LPT, PhD">
+<meta name="robots" content="noindex">
+<meta name="description" content="Class site for MAEEMNGT 2211 Leadership in Education, Section 4-MAED-EM-H, UPHSD Graduate School.">
 <title>Leadership in Education 4-MAED-EM-H</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Public+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 <style>
-/* Layout: a deep maroon masthead carrying a four-weekend progress track, then banded sections; the weekend timeline is the spine. */
 :root{
-  --bg:#fbf8f4; --surface:#ffffff; --tint:#f4eadc; --ink:#231718; --muted:#6f5f5f; --line:#e4d7c5;
-  --maroon:#7b1113; --deep:#4e0a0c; --on-deep:#fff6ea; --on-deep-muted:#e2c9a8; --gold:#b08d3c; --gold-ink:#7d6220;
-  --ok:#2f6b4a; --warn:#a15c00; --shadow:0 1px 2px rgba(60,20,20,.06),0 8px 24px rgba(60,20,20,.07);
-  --display:"Fraunces",Georgia,"Times New Roman",serif; --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --plum:#5c0f1c;        /* hero and footer ground */
+  --plum-2:#74182a;
+  --ink:#241517;
+  --muted:#6a5759;
+  --paper:#ffffff;
+  --card:#ffffff;
+  --line:#e7d8d6;
+  --marigold:#f2b705;    /* live sessions, primary actions */
+  --teal-soft:#f8efee;   /* pale maroon tint for notes */
+  --gold-soft:#fdf1cf;
+  --display:"Public Sans",system-ui,sans-serif;
+  --head:"Source Serif 4",Georgia,serif;
+  --body:"Source Serif 4",Georgia,serif;
+  --r:14px;
 }
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#171011; --surface:#211718; --tint:#2b1d1d; --ink:#f5ece6; --muted:#b9a8a2; --line:#412f2e;
-  --maroon:#e7928b; --deep:#3a0809; --on-deep:#fff6ea; --on-deep-muted:#d9bd98; --gold:#d6b25e; --gold-ink:#d6b25e;
-  --ok:#86cfa6; --warn:#ecb766; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme:dark } }
-:root[data-theme="dark"]{
-  --bg:#171011; --surface:#211718; --tint:#2b1d1d; --ink:#f5ece6; --muted:#b9a8a2; --line:#412f2e;
-  --maroon:#e7928b; --deep:#3a0809; --on-deep:#fff6ea; --on-deep-muted:#d9bd98; --gold:#d6b25e; --gold-ink:#d6b25e;
-  --ok:#86cfa6; --warn:#ecb766; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme:dark }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
-.wrap{max-width:68rem;margin-inline:auto;padding-inline:1.25rem}
-a{color:var(--maroon);text-underline-offset:.15em}
-a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:.25rem}
-h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.08;margin:0;font-weight:700}
-.eyebrow{font-family:var(--mono);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-ink)}
-.small{font-size:.9rem;color:var(--muted)}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.12;margin:0;letter-spacing:-.012em}
+p{margin:0 0 1em}
+a{color:inherit}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--marigold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 
-/* masthead */
-.mast{background:var(--deep);color:var(--on-deep);position:relative;overflow:hidden}
-.mast::before{content:"2211";position:absolute;right:-2rem;top:-3.5rem;font-family:var(--display);font-weight:800;font-size:clamp(12rem,34vw,26rem);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(214,178,94,.22);pointer-events:none;user-select:none}
-.mast .wrap{position:relative;padding-block:3.2rem 2.6rem}
-.mast .eyebrow{color:var(--gold)}
-.mast h1{font-size:clamp(2.6rem,8.5vw,5.6rem);font-weight:800;letter-spacing:-.02em;margin-top:.7rem;max-width:12ch}
-.mast h1 em{font-style:italic;font-weight:500;color:var(--gold)}
-.mast p.lead{max-width:38rem;margin:1.1rem 0 0;color:var(--on-deep-muted);font-size:1.08rem}
-.track{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-top:2.2rem;padding:0;list-style:none}
-.track li{min-width:0;border-top:3px solid rgba(255,246,234,.22);padding-top:.6rem;font-family:var(--mono);font-size:.78rem;color:var(--on-deep-muted)}
-.track li b{display:block;font-family:var(--display);font-size:1.25rem;color:var(--on-deep);font-weight:700}
-.track li.past{border-top-color:var(--gold)} .track li.now{border-top-color:var(--gold);color:var(--on-deep)}
-.track li.now b::after{content:"now";font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:#2a1a05;border-radius:99px;padding:.1rem .5rem;margin-left:.5rem;vertical-align:middle}
-.mastgrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:2rem;align-items:end;margin-top:2.2rem}
-.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem 1.5rem;margin:0;padding:0;list-style:none}
-.facts b{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:.15rem}
-.nowcard{background:var(--on-deep);color:#2a1516;border-radius:.9rem;padding:1.2rem 1.3rem;box-shadow:0 12px 40px rgba(0,0,0,.28);display:grid;gap:.4rem}
-.nowcard .eyebrow{color:#7b1113}
-.nowcard h3{font-size:1.35rem;color:#2a1516}
-.nowcard a{color:#7b1113;font-weight:700}
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:20;background:rgba(92,15,28,.97);backdrop-filter:blur(8px);color:#fff}
+.nav .wrap{display:flex;align-items:center;gap:14px;height:56px}
+.nav .brand{font-family:var(--display);font-weight:700;text-decoration:none;white-space:nowrap}
+.nav ul{display:flex;gap:2px;list-style:none;margin:0 0 0 auto;padding:0;overflow-x:auto;scrollbar-width:none}
+.nav ul::-webkit-scrollbar{display:none}
+.nav li a{display:block;padding:7px 9px;border-radius:999px;font-family:var(--display);font-size:14px;text-decoration:none;color:#f4e0dd;white-space:nowrap}
+.nav li a:hover{color:#fff;background:rgba(255,255,255,.1)}
+.nav li a.on{background:var(--marigold);color:var(--plum)}
 
-nav.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
-nav.bar .wrap{display:flex;gap:.4rem;overflow-x:auto;padding-block:.6rem;white-space:nowrap}
-nav.bar a{text-decoration:none;font-weight:600;font-size:.9rem;color:var(--ink);padding:.35rem .8rem;border-radius:99px}
-nav.bar a:hover{background:var(--tint);color:var(--maroon)}
+/* ---------- hero ---------- */
+.hero{background:var(--plum);color:#fff;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .9fr;gap:40px;align-items:center;padding-top:72px;padding-bottom:64px}
+.hero .course{font-family:var(--display);font-size:16px;color:#f1d9d6;margin-bottom:22px}
+.hero .course b{color:var(--marigold);font-weight:700}
+.hero h1{font-size:clamp(2.4rem,5vw,3.9rem);font-weight:700;letter-spacing:-.02em}
+.hero h1 span{display:block}
+.hero h1 .l2{color:var(--marigold)}
+.hero .lede{font-size:1.15rem;color:#f8eae8;max-width:34em;margin:26px 0 30px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:16px;text-decoration:none;padding:13px 22px;border-radius:999px;border:2px solid transparent;cursor:pointer}
+.btn.solid{background:var(--marigold);color:var(--plum)}
+.btn.solid:hover{background:#ffc933}
+.btn.ghost{border-color:rgba(255,255,255,.4);color:#fff}
+.btn.ghost:hover{border-color:#fff}
+.btn.dark{background:var(--plum);color:#fff}
+.btn.dark:hover{background:var(--plum-2)}
+.btn.line{border-color:var(--plum);color:var(--plum);background:transparent}
+.btn.line:hover{background:var(--plum);color:#fff}
 
-section{padding-block:3.4rem}
-section.band{background:var(--tint)}
-.head{display:grid;gap:.5rem;margin-bottom:1.6rem;max-width:44rem}
-.head h2{font-size:clamp(1.9rem,4.5vw,2.7rem);color:var(--ink)}
-.head h2 em{font-style:italic;font-weight:500;color:var(--maroon)}
-.head p{margin:0;color:var(--muted)}
+.onion{width:100%;max-width:440px;justify-self:end}
+.onion text{font-family:var(--display);font-size:13px;fill:#fff}
+.onion .cap{font-size:12px;fill:#f1d9d6}
+.onion circle{transform-origin:220px 220px;animation:grow .9s cubic-bezier(.2,.7,.2,1) both}
+.onion circle:nth-of-type(2){animation-delay:.08s}
+.onion circle:nth-of-type(3){animation-delay:.16s}
+.onion circle:nth-of-type(4){animation-delay:.24s}
+.onion circle:nth-of-type(5){animation-delay:.32s}
+@keyframes grow{from{transform:scale(.2);opacity:0}to{transform:scale(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){.onion circle{animation:none}html{scroll-behavior:auto}}
 
-/* start cards */
-.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:.9rem;padding:1.15rem 1.2rem;box-shadow:var(--shadow);display:grid;gap:.45rem;align-content:start;min-width:0;text-decoration:none;color:var(--ink);transition:transform .18s ease,border-color .18s ease}
-a.card:hover{transform:translateY(-3px);border-color:var(--gold)}
-.card h3{font-size:1.18rem}
-.card .kind{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink)}
-.card .go{font-weight:700;color:var(--maroon);font-size:.92rem;margin-top:.2rem}
-.card.off{box-shadow:none;border-style:dashed}
+.notice{background:var(--gold-soft);border-bottom:1px solid #ecd48a;color:var(--ink)}
+.notice .wrap{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;padding-top:16px;padding-bottom:16px;font-size:16.5px;line-height:1.45}
+.notice strong{font-family:var(--display);color:var(--plum)}
+.facts{background:var(--plum-2);color:#fff;border-top:4px solid var(--marigold)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.facts div{padding:22px 20px 22px 0;border-right:1px solid rgba(255,255,255,.14);margin-right:20px}
+.facts div:last-child{border:0;margin:0}
+.facts dt{font-family:var(--display);font-size:14px;color:#f1d9d6;margin-bottom:4px}
+.facts dd{margin:0;font-family:var(--display);font-weight:600;font-size:17px;line-height:1.3}
+dl{margin:0}
 
-/* timeline */
-.timeline{position:relative;display:grid;gap:1.1rem}
-.timeline::before{content:"";position:absolute;left:1.55rem;top:1rem;bottom:1rem;width:2px;background:var(--line)}
-.wk{position:relative;display:grid;grid-template-columns:3.1rem minmax(0,1fr);gap:1.2rem}
-.wk .dot{width:3.1rem;height:3.1rem;border-radius:50%;background:var(--surface);border:2px solid var(--gold);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.35rem;color:var(--maroon);z-index:1}
-.wk.current .dot{background:var(--maroon);border-color:var(--maroon);color:var(--bg)}
-.wk .body{background:var(--surface);border:1px solid var(--line);border-radius:.9rem;padding:1.2rem 1.3rem;box-shadow:var(--shadow);min-width:0}
-.wk.current .body{border-color:var(--gold);border-width:2px}
-.wk .meta{display:flex;flex-wrap:wrap;gap:.4rem .7rem;align-items:center;font-family:var(--mono);font-size:.78rem;color:var(--muted);margin-bottom:.45rem}
-.wk h3{font-size:1.4rem}
-.wk ul{margin:.8rem 0 0;padding:0;list-style:none;display:grid;gap:.35rem}
-.wk li{padding-left:1.1rem;position:relative}
-.wk li::before{content:"";position:absolute;left:0;top:.62em;width:.45rem;height:.45rem;border-radius:50%;background:var(--gold)}
-.wk .taskline{margin:.9rem 0 0;padding-top:.8rem;border-top:1px dashed var(--line)}
-.chip{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;padding:.12rem .55rem;border-radius:99px;border:1px solid var(--line);color:var(--muted);white-space:nowrap;background:var(--surface)}
-.chip.due{border-color:var(--warn);color:var(--warn)} .chip.done{border-color:var(--ok);color:var(--ok)} .chip.live{border-color:var(--maroon);color:var(--maroon)} .chip.gold{border-color:var(--gold);color:var(--gold-ink)}
+/* ---------- sections ---------- */
+section{padding:84px 0 12px}
+.head{max-width:44em;margin-bottom:34px}
+.head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:700;margin-bottom:12px}
+.head p{color:var(--muted);margin:0}
+h3{font-size:1.3rem;font-weight:700}
+.tag{display:inline-block;font-family:var(--display);font-size:13.5px;font-weight:700;padding:3px 11px;border-radius:999px;line-height:1.5}
+.tag.live{background:var(--marigold);color:var(--plum)}
+.tag.self{background:#fff;color:var(--plum);box-shadow:inset 0 0 0 1.5px var(--plum)}
+.tag.due{background:var(--plum);color:#fff}
+.tag.a{background:var(--gold-soft);color:var(--plum)}
+.tag.b{background:var(--gold-soft);color:var(--plum)}
+.tag.c{background:var(--gold-soft);color:var(--plum)}
+
+/* start here */
+.start{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:16px}
+.doc{box-shadow:0 1px 0 var(--line);display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;text-decoration:none;transition:border-color .15s,transform .15s}
+.doc:hover{border-color:var(--plum);transform:translateY(-2px)}
+.doc h3{margin-bottom:8px}
+.doc p{font-size:16px;color:var(--muted);margin:0 0 18px}
+.doc .go{margin-top:auto;font-family:var(--display);font-weight:700;font-size:15px;color:var(--plum);text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--marigold);text-decoration-thickness:2px}
+.doc.first{grid-row:span 2;background:var(--plum);color:#fff;border-color:var(--plum);justify-content:flex-end;min-height:300px}
+.doc.first h3{font-size:2rem}
+.doc.first p{color:#f4e0dd;font-size:17px}
+.doc.first .go{color:var(--marigold)}
+.doc.first .n{font-family:var(--display);font-size:15px;color:var(--marigold);margin-bottom:auto}
+
+/* schedule */
+.weeks{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.week{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.week header{padding:18px 20px 14px;border-bottom:1px solid var(--line)}
+.week header .wk{font-family:var(--head);font-weight:700;font-size:1.5rem}
+.week header .dt{font-family:var(--display);font-size:15px;color:var(--muted)}
+.week h4{font-size:1.05rem;font-weight:700;line-height:1.25;margin-top:10px}
+.slot{padding:14px 20px;border-bottom:1px dashed var(--line);font-size:16px;line-height:1.45}
+.slot:last-child{border:0}
+.slot .when{font-family:var(--display);font-size:14px;color:var(--muted);display:block;margin:6px 0 2px}
+.slot.liveb{background:var(--gold-soft)}
+.slot.dueb{background:#fcf7f6;margin-top:auto}
+.slot.dueb .tag{border-radius:8px;margin-bottom:4px}
+.slot b{font-family:var(--display)}
+.exams{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.exam{background:var(--plum);color:#fff;border-radius:var(--r);padding:22px 24px}
+.exam h3{margin:12px 0 4px;font-size:1.4rem}
+.exam .xd{margin:0;font-family:var(--display);color:var(--marigold);font-weight:600}
+.key{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:18px;font-family:var(--display);font-size:15px;color:var(--muted)}
 
 /* modules */
-.mods{display:grid;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));gap:1rem}
-.mod{grid-template-columns:auto minmax(0,1fr);gap:.2rem 1rem;align-items:start}
-.mod .n{font-family:var(--display);font-weight:800;font-size:2.6rem;line-height:.9;color:var(--gold);grid-row:span 3}
-.mod h3{font-size:1.08rem;line-height:1.2}
+.mods{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.mod{display:grid;grid-template-columns:64px 1fr auto auto;gap:18px;align-items:center;padding:18px 22px;border-bottom:1px solid var(--line);text-decoration:none}
+.mod:last-child{border:0}
+.mod:hover{background:#fdf9f8}
+.mod .no{font-family:var(--head);font-weight:700;font-size:1.7rem;color:var(--plum)}
+.mod .t{font-family:var(--head);font-weight:700;font-size:1.1rem;line-height:1.25}
+.mod .s{font-size:15.5px;color:var(--muted);display:block;font-family:var(--body);font-weight:400;margin-top:3px}
+.mod .open{font-family:var(--display);font-weight:700;font-size:15px;color:var(--plum);text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--marigold);text-decoration-thickness:2px;white-space:nowrap}
+.mod.zero,.mod.zero:hover{background:var(--gold-soft)}
+.wkrow{padding:10px 22px;background:#f6eceb;font-family:var(--display);font-weight:700;font-size:15px;border-bottom:1px solid var(--line)}
 
 /* tasks */
-.tasks{display:grid;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));gap:1rem}
-.task{grid-template-rows:auto auto 1fr auto}
-.cal{display:inline-grid;justify-items:center;width:3.6rem;border-radius:.6rem;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
-.cal span{width:100%;text-align:center;background:var(--maroon);color:var(--bg);font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.12rem 0}
-.cal b{font-family:var(--display);font-size:1.5rem;font-weight:800;line-height:1.25;font-variant-numeric:tabular-nums}
-.task .toprow{display:flex;justify-content:space-between;align-items:flex-start;gap:.6rem}
+.tasks{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.task{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.task .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px}
+.task .pct{font-family:var(--head);font-weight:700;font-size:2rem;color:var(--plum);white-space:nowrap}
+.task h3{margin-bottom:10px}
+.task p{font-size:16.5px}
+.task .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.note{background:var(--teal-soft);border-radius:var(--r);padding:18px 22px;margin-top:16px;font-size:16.5px}
+.note b{font-family:var(--display)}
+
+/* conference */
+.conf{background:var(--plum);color:#fff;margin-top:84px;padding:84px 0}
+.conf .head p{color:#f4e0dd}
+.strands{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}
+.strand{background:#fff;color:var(--ink);border-radius:var(--r);padding:24px;display:flex;flex-direction:column}
+.strand .who{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-family:var(--display);font-size:15px;color:var(--muted)}
+.strand h3{margin-bottom:10px;font-size:1.2rem;line-height:1.2}
+.strand p{font-size:16px}
+.strand details{margin:0 0 16px;font-size:15.5px}
+.strand summary{font-family:var(--display);font-weight:700;cursor:pointer;color:var(--plum)}
+.strand ol{margin:10px 0 0;padding-left:20px}
+.strand li{margin-bottom:6px}
+.strand .btn{margin-top:auto;text-align:center;font-size:15px;padding:11px 16px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.panel{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:var(--r);padding:26px}
+.panel h3{margin-bottom:14px}
+.run{list-style:none;margin:0;padding:0;font-size:16px}
+.run li{display:grid;grid-template-columns:104px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.run li:last-child{border:0}
+.run .tm{font-family:var(--display);font-weight:700;color:var(--marigold)}
+.rules{margin:0;padding-left:20px;font-size:16.5px}
+.rules li{margin-bottom:8px}
+.rub{width:100%;border-collapse:collapse;font-size:16px}
+.rub td{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.rub td:last-child{text-align:right;font-family:var(--display);font-weight:700;color:var(--marigold);width:56px}
+.rub tr:last-child td{border:0;font-family:var(--display);font-weight:700}
+.fine{margin:16px 0 0;font-size:16px}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.86em;background:rgba(255,255,255,.12);padding:2px 7px;border-radius:6px}
+
+/* ---------- about, outcomes, the field ---------- */
+.about{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:start}
+.about .prose p{max-width:38em}
+.about .prose p:first-child{font-size:1.18rem;line-height:1.55}
+.aside{border-left:4px solid var(--marigold);padding:4px 0 4px 22px}
+.aside h3{font-size:1.1rem;margin-bottom:8px}
+.aside p{font-size:16.5px}
+.aside ul{margin:0 0 18px;padding-left:18px;font-size:16px}
+.aside li{margin-bottom:4px}
+.sub{font-size:1.45rem;font-weight:700;margin:52px 0 8px}
+.subp{color:var(--muted);max-width:44em;margin:0 0 22px}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.level{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--plum);border-radius:var(--r);padding:22px 24px}
+.level .lv{font-family:var(--display);font-size:14px;font-weight:700;color:var(--muted)}
+.level h3{margin:4px 0 8px}
+.level p{margin:0;font-size:16.5px}
+.chain{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:20px 0 0;padding:0;font-family:var(--display);font-weight:700;font-size:15px}
+.chain li{background:var(--plum);color:#fff;padding:9px 16px;border-radius:999px;display:flex;align-items:center}
+.chain li:not(:last-child)::after{content:"";width:0;height:0;border:5px solid transparent;border-left:7px solid var(--marigold);margin-left:10px;margin-right:-8px}
+.chain li:last-child{background:var(--marigold);color:var(--plum)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0;font-family:var(--display);font-size:14.5px}
+.chips li{border:1px solid var(--line);border-radius:999px;padding:6px 14px;background:#fff}
+.clos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 40px;border-top:1px solid var(--line)}
+.clos li{display:grid;grid-template-columns:74px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--line)}
+.clos .n{font-family:var(--display);font-weight:700;font-size:14px;color:var(--plum);background:var(--gold-soft);border-radius:8px;padding:4px 0;text-align:center;align-self:start}
+.clos b{font-family:var(--head);font-size:1.08rem;display:block;margin-bottom:2px}
+.clos span{font-size:16px;color:#3d2c2e}
+.themes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.theme{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px}
+.theme .lv{font-family:var(--display);font-size:14px;font-weight:700;color:var(--muted)}
+.theme h3{font-size:1.12rem;line-height:1.25;margin:4px 0 10px}
+.theme ul{margin:0;padding-left:18px;font-size:15.5px;line-height:1.5}
+.theme li{margin-bottom:5px}
+.qs{margin:0;padding-left:26px;columns:2;column-gap:44px;font-size:16.5px}
+.qs li{break-inside:avoid;margin-bottom:12px;padding-left:4px}
+.qs li::marker{font-family:var(--display);font-weight:700;color:var(--plum)}
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:99px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.tl li{display:grid;grid-template-columns:76px 1fr;gap:48px;padding:0 0 22px;position:relative}
+.tl li::before{content:"";position:absolute;left:93px;top:8px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--plum)}
+.tl li.pivot::before{background:var(--marigold)}
+.tl .yr{font-family:var(--head);font-weight:700;font-size:1.35rem;color:var(--plum);text-align:right;line-height:1.3}
+.tl b{font-family:var(--head);font-size:1.08rem;display:block}
+.tl span{font-size:16px;color:#3d2c2e;display:block;max-width:44em}
+.scholars{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 36px}
+.scholars h3{font-size:1.05rem;padding-bottom:8px;border-bottom:2px solid var(--plum);margin-bottom:10px}
+.scholars ul{list-style:none;margin:0;padding:0;font-size:15.5px;line-height:1.45}
+.scholars li{padding:6px 0;border-bottom:1px solid var(--line)}
+.scholars li b{font-family:var(--display);font-weight:600;display:block}
+.scholars li span{color:var(--muted)}
+.bm{width:100%;border-collapse:collapse;font-size:15.5px;line-height:1.45;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.bm th{font-family:var(--display);font-size:14px;text-align:left;background:var(--plum);color:#fff;padding:12px 16px}
+.bm td{padding:12px 16px;border-top:1px solid var(--line);vertical-align:top}
+.bm td:first-child{font-family:var(--display);font-weight:600;width:27%}
+.bm .loc{background:#fcf7f6;font-family:var(--display);font-weight:700;font-size:14px;color:var(--plum)}
+.bmnote{font-size:15px;color:var(--muted);margin:10px 0 0}
+.regs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+
+/* professor */
+.prof{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start}
+.portrait{position:relative;margin:0 14px 14px 0}
+.portrait::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:3px solid var(--marigold);border-radius:var(--r)}
+.portrait img{position:relative;display:block;width:100%;height:auto;border-radius:var(--r);background:var(--plum)}
+.prof .role{font-family:var(--display);font-weight:600;color:var(--plum);margin:6px 0 18px}
+.prof h3.nm{font-size:1.9rem}
+.prof .bio p{max-width:40em}
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:28px 40px;margin-top:26px}
+.creds h4{font-family:var(--display);font-size:14px;font-weight:700;color:var(--muted);letter-spacing:0;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--plum)}
+.creds ul{list-style:none;margin:0;padding:0;font-size:16px;line-height:1.45}
+.creds li{padding:7px 0;border-bottom:1px solid var(--line)}
+.creds li span{display:block;font-family:var(--display);font-size:14px;color:var(--muted)}
+
+/* profile */
+.profile{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:start}
+.sheet{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.sheet h3{margin-bottom:14px}
+.fields{list-style:none;margin:0;padding:0;columns:2;column-gap:28px;font-size:16px}
+.fields li{break-inside:avoid;padding:8px 0;border-bottom:1px solid var(--line)}
+.steps{margin:0 0 22px;padding-left:22px}
+.steps li{margin-bottom:8px}
+.profile .note{margin-top:24px}
 
 /* readings */
-.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.1rem}
-.tabs button{font:inherit;font-weight:700;font-size:.92rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:99px;padding:.45rem 1rem;cursor:pointer}
-.tabs button[aria-selected="true"]{background:var(--maroon);border-color:var(--maroon);color:var(--bg)}
-.reads{list-style:none;margin:0;padding:0;display:grid;gap:.6rem;counter-reset:r}
-.reads li{counter-increment:r;display:grid;grid-template-columns:2.2rem minmax(0,1fr);gap:.6rem;align-items:baseline;background:var(--surface);border:1px solid var(--line);border-radius:.7rem;padding:.8rem 1rem}
-.reads li::before{content:counter(r,decimal-leading-zero);font-family:var(--mono);font-size:.8rem;color:var(--gold-ink)}
-.reads a{font-weight:600}
+.read details{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin-bottom:12px}
+.read summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;font-family:var(--display);font-weight:700;font-size:1.15rem}
+.read summary::-webkit-details-marker{display:none}
+.read summary small{font-weight:400;font-size:15px;color:var(--muted)}
+.read summary::after{content:"+";font-size:1.6rem;font-weight:400;color:var(--plum);line-height:1}
+.read details[open] summary::after{content:"\2212"}
+.read ol{margin:0;padding:0 24px 18px 46px;font-size:16.5px}
+.read li{padding:10px 0;border-top:1px solid var(--line)}
+.read li a{font-family:var(--display);font-weight:700;font-size:15px;color:var(--plum);text-underline-offset:4px;text-decoration-color:var(--marigold);text-decoration-thickness:2px;white-space:nowrap}
+.read .opt{font-family:var(--display);font-size:13.5px;color:var(--muted)}
 
 /* grading */
-.bar{display:flex;height:3.4rem;border-radius:.7rem;overflow:hidden;font-family:var(--display);font-weight:800;font-size:1.3rem}
-.bar div{display:grid;place-items:center;min-width:0}
-.bar .a{flex:20;background:var(--gold);color:#2a1a05} .bar .b{flex:50;background:var(--maroon);color:var(--bg)} .bar .c{flex:30;background:var(--deep);color:var(--on-deep)}
-.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1rem 1.5rem;margin-top:1rem;padding:0;list-style:none}
-.legend li{min-width:0;padding-left:1.2rem;position:relative}
-.legend li::before{content:"";position:absolute;left:0;top:.45em;width:.7rem;height:.7rem;border-radius:.2rem;background:var(--sw)}
-.formula{margin-top:1.6rem;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:1rem}
-.formula>div{border-radius:.9rem;padding:1.2rem 1.3rem;min-width:0}
-.formula .f{background:var(--deep);color:var(--on-deep)} .formula .f strong{font-family:var(--display);font-size:clamp(1.15rem,2.6vw,1.6rem);display:block}
-.formula .f span{color:var(--on-deep-muted);font-size:.92rem}
-.formula .p{background:var(--surface);border:1px solid var(--line);display:flex;gap:1rem;align-items:center}
-.formula .p strong{font-family:var(--display);font-size:2.6rem;font-weight:800;color:var(--maroon);line-height:1}
-.exams{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem;margin-top:1rem}
+.bars{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 26px}
+.bar{display:grid;grid-template-columns:minmax(220px,1.3fr) 2fr 56px;gap:18px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.bar:last-child{border:0}
+.bar .nm{font-family:var(--head);font-weight:700;font-size:1.02rem;line-height:1.25}
+.bar .nm small{display:block;font-family:var(--body);font-weight:400;font-size:15px;color:var(--muted)}
+.bar .track{height:14px;background:#f6eceb;border-radius:999px;overflow:hidden}
+.bar .track i{display:block;height:100%;background:var(--plum);border-radius:999px}
+.bar.big .track i{background:var(--marigold)}
+.bar .v{font-family:var(--head);font-weight:700;font-size:1.3rem;text-align:right}
+.stds{columns:2;column-gap:40px;margin:14px 0 0;padding-left:20px;font-size:16.5px}
+.stds li{break-inside:avoid;margin-bottom:6px}
 
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem}
-.email{font-family:var(--mono);font-size:.9rem;overflow-wrap:anywhere}
-.copy{font:inherit;font-size:.8rem;font-weight:700;border:1px solid var(--line);background:var(--tint);color:var(--ink);border-radius:99px;padding:.2rem .7rem;cursor:pointer;margin-left:.4rem}
+/* policies */
+.pols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pol{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;font-size:16.5px}
+.pol h3{margin-bottom:12px}
+.pol ul{margin:0;padding-left:20px}
+.pol li{margin-bottom:8px}
+.pol b{font-family:var(--display)}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:10px;background:#f6eceb;border-radius:10px;padding:10px 12px;margin:0 0 14px;font-family:var(--display);font-size:15px;word-break:break-all}
+.mail button{font-family:var(--display);font-weight:700;font-size:14px;border:0;background:var(--plum);color:#fff;border-radius:999px;padding:6px 14px;cursor:pointer}
 
-.quote{background:var(--deep);color:var(--on-deep);padding-block:3.6rem}
-.quote blockquote{margin:0;font-family:var(--display);font-size:clamp(1.5rem,3.8vw,2.5rem);line-height:1.2;font-weight:500;max-width:46rem;text-wrap:balance}
-.quote blockquote em{color:var(--gold)}
-.quote cite{display:block;margin-top:1.1rem;font-family:var(--mono);font-style:normal;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-deep-muted)}
-footer{padding-block:1.6rem 2.6rem;color:var(--muted);font-size:.88rem}
+/* quote and footer */
+.quote{padding:96px 0}
+.quote blockquote{margin:0;max-width:22em;font-family:var(--head);font-weight:600;font-size:clamp(1.6rem,3.6vw,2.6rem);line-height:1.16;letter-spacing:-.02em}
+.quote blockquote mark{background:linear-gradient(transparent 62%,var(--marigold) 62%);color:inherit}
+.quote cite{display:block;margin-top:20px;font-style:normal;font-family:var(--display);font-size:15px;color:var(--muted)}
+footer{background:var(--plum);color:#f1d9d6;padding:36px 0;font-size:15.5px}
+footer p{margin:0;max-width:52em}
 
-@media (max-width:46rem){ .mastgrid,.formula{grid-template-columns:1fr} .track{grid-template-columns:repeat(2,1fr)} .wk{grid-template-columns:2.4rem minmax(0,1fr);gap:.8rem} .wk .dot{width:2.4rem;height:2.4rem;font-size:1.05rem} .timeline::before{left:1.2rem} }
-@media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth}
-  .mast h1,.mast .lead,.track,.mastgrid{animation:rise .7s cubic-bezier(.2,.7,.2,1) both} .mast .lead{animation-delay:.08s} .track{animation-delay:.16s} .mastgrid{animation-delay:.24s}
-  @keyframes rise{from{transform:translateY(14px);opacity:.01}to{transform:none;opacity:1}} }
+@media (max-width:920px){
+  .hero .wrap{grid-template-columns:1fr;padding-top:48px}
+  .onion{justify-self:start;max-width:340px}
+  .facts .wrap{grid-template-columns:1fr 1fr}
+  .facts div{border:0;margin:0;padding:16px 12px 16px 0}
+  .prof,.creds,.about,.levels,.clos,.themes,.scholars,.regs,.start,.weeks,.exams,.tasks,.strands,.two,.profile,.pols{grid-template-columns:1fr}
+  .doc.first{grid-row:auto;min-height:0}
+  .doc.first .n{margin-bottom:28px}
+  .mod{grid-template-columns:44px 1fr;gap:6px 14px}
+  .mod .tag,.mod .open{grid-column:2;justify-self:start}
+  .bar{grid-template-columns:1fr 52px}
+  .bar .track{grid-column:1/-1;grid-row:2}
+  .portrait{max-width:260px}
+  .fields,.stds,.qs{columns:1}
+  .tl::before{left:63px}.tl li{grid-template-columns:48px 1fr;gap:34px}.tl li::before{left:57px}.tl .yr{font-size:1.05rem}
+  .bm thead{display:none}.bm,.bm tbody,.bm tr,.bm td{display:block;width:100%!important}.bm td{border-top:0;padding:4px 16px}.bm tr{border-top:1px solid var(--line);padding:10px 0}
+  section{padding-top:60px}
+  .nav .brand{display:none}
+  .nav ul{margin-left:-8px}
+}
+@media (max-width:480px){body{font-size:17px}.wrap{padding:0 16px}.facts .wrap{grid-template-columns:1fr}}
+
+/* ---------- additions for MAEEMNGT 2211 ---------- */
+.dom{width:100%;max-width:440px;justify-self:end}
+.dom text{font-family:var(--display);font-size:12.5px;fill:#fff;font-weight:600}
+.dom .cap{font-size:12px;fill:#f1d9d6;font-weight:400}
+.dom line{stroke:rgba(255,255,255,.28);stroke-width:2}
+.dom g{transform-origin:220px 205px;animation:grow .9s cubic-bezier(.2,.7,.2,1) both}
+.dom g:nth-of-type(2){animation-delay:.08s}.dom g:nth-of-type(3){animation-delay:.16s}.dom g:nth-of-type(4){animation-delay:.24s}.dom g:nth-of-type(5){animation-delay:.32s}.dom g:nth-of-type(6){animation-delay:.4s}
+@media (prefers-reduced-motion:reduce){.dom g{animation:none}}
+.week.now{border-color:var(--plum);box-shadow:0 0 0 2px var(--plum)}
+.week.now header .wk::after{content:"This week";font-family:var(--display);font-size:13px;font-weight:700;background:var(--marigold);color:var(--plum);padding:3px 10px;border-radius:999px;margin-left:10px;vertical-align:middle}
+.exam p{margin:8px 0 0;font-size:16px;color:#f8eae8}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}
+.run.sm li{grid-template-columns:96px 1fr;font-size:15.5px}
+.panel .sm-note{font-size:15px;color:#f1d9d6;margin:12px 0 0}
+.conf h3.csub{font-size:1.45rem;margin:44px 0 18px}
+.strand .sub2{font-size:15px;color:var(--muted);margin:0 0 12px}
+.strand details{margin-bottom:0}
+.task .pct small{display:block;font-family:var(--display);font-size:13px;font-weight:600;color:var(--muted);text-align:right;line-height:1.2}
+.task .go{display:inline-block;margin-top:16px;font-family:var(--display);font-weight:700;font-size:15px;color:var(--plum);text-underline-offset:4px;text-decoration-color:var(--marigold);text-decoration-thickness:2px}
+.gradegrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.gradegrid h3{margin:0 0 12px}
+.formula{font-family:var(--head);font-weight:700;font-size:1.25rem;color:var(--plum)}
+.scale{width:100%;border-collapse:collapse;font-size:16px;margin-top:10px}
+.scale td{padding:7px 0;border-bottom:1px solid var(--line)}
+.scale td:nth-child(2){font-family:var(--display);font-weight:700;text-align:center;width:70px}
+.scale td:last-child{text-align:right;color:var(--muted)}
+.themes .theme .dm{font-family:var(--display);font-size:13.5px;color:var(--plum);background:var(--gold-soft);border-radius:8px;padding:3px 9px;display:inline-block;margin-bottom:10px}
+.note a,.subp a,.head a{color:var(--plum);text-underline-offset:3px;text-decoration-color:var(--marigold);text-decoration-thickness:2px}
+@media (max-width:920px){.three,.gradegrid{grid-template-columns:1fr}.dom{justify-self:start;max-width:340px}}
 </style>
-
 </head>
 <body>
-<header class="mast"><div class="wrap">
-  <div class="eyebrow">MAEEMNGT 2211 · Section 4-MAED-EM-H · Module 4</div>
-  <h1>Leadership <em>in</em> Education</h1>
-  <p class="lead">Class site for the MAEd in Educational Management, 1st Semester, SY 2026–2027, University of Perpetual Help System DALTA Graduate School.</p>
-  <ol class="track" id="track" aria-label="Four weekends"></ol>
-  <div class="mastgrid">
-    <ul class="facts">
-      <li><b>Live sessions</b>Saturdays, 7:00–11:00 AM, online</li>
-      <li><b>Dates</b>October 10 – November 1, 2026</li>
-      <li><b>Professor</b>Carlo S. Villalona, LPT, PhD</li>
-      <li><b>Learning time</b>64 hours: 16 live, 16 reading, 32 independent</li>
-    </ul>
-    <div class="nowcard" id="now" aria-live="polite"></div>
-  </div>
-</div></header>
 
-<nav class="bar" aria-label="Sections"><div class="wrap">
-  <a href="#start">Start here</a><a href="#schedule">Schedule</a><a href="#modules">Modules</a><a href="#tasks">Tasks</a><a href="#readings">Readings</a><a href="#grading">Grading</a><a href="#policies">Policies</a>
-</div></nav>
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top">MAEEMNGT 2211</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#professor">Professor</a></li>
+      <li><a href="#start">Start here</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#modules">Modules</a></li>
+      <li><a href="#tasks">Tasks</a></li>
+      <li><a href="#conference">Reporting</a></li>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#field">Field</a></li>
+      <li><a href="#readings">Readings</a></li>
+      <li><a href="#grading">Grading</a></li>
+      <li><a href="#standards">Standards</a></li>
+      <li><a href="#policies">Policies</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="course"><b>MAEEMNGT 2211</b> &nbsp;Section 4-MAED-EM-H &nbsp;|&nbsp; Module 4, 1st Semester, SY 2026–2027</p>
+      <h1><span>Leadership</span><span class="l2">in Education</span></h1>
+      <p class="lede">Class site for the Master of Arts in Education, major in Educational Management, at the University of Perpetual Help System DALTA Graduate School. This site sets out what the course studies, how it is organized, and everything students need for the four weeks.</p>
+      <div class="btns">
+        <a class="btn solid" href="#start">Start here</a>
+        <a class="btn ghost" href="#about">About the course</a>
+        <a class="btn ghost" href="#conference">Find your reporting group</a>
+      </div>
+    </div>
+
+    <svg class="dom" viewBox="0 0 440 440" role="img" aria-labelledby="domT domD">
+      <title id="domT">The five domains of school leadership</title>
+      <desc id="domD">Five circles, one for each domain of the Philippine Professional Standards for School Heads, joined to a central circle labelled learners.</desc>
+      <line x1="220" y1="205" x2="220" y2="62"/><line x1="220" y1="205" x2="356" y2="161"/><line x1="220" y1="205" x2="304" y2="321"/><line x1="220" y1="205" x2="136" y2="321"/><line x1="220" y1="205" x2="84" y2="161"/>
+      <g><circle cx="220" cy="62" r="58" fill="#7c1b2c"/><text x="220" y="58" text-anchor="middle">Leading</text><text x="220" y="74" text-anchor="middle">strategically</text></g>
+      <g><circle cx="356" cy="161" r="58" fill="#92283a"/><text x="356" y="149" text-anchor="middle">Managing</text><text x="356" y="165" text-anchor="middle">operations and</text><text x="356" y="181" text-anchor="middle">resources</text></g>
+      <g><circle cx="304" cy="321" r="58" fill="#7c1b2c"/><text x="304" y="309" text-anchor="middle">Focusing on</text><text x="304" y="325" text-anchor="middle">teaching and</text><text x="304" y="341" text-anchor="middle">learning</text></g>
+      <g><circle cx="136" cy="321" r="58" fill="#92283a"/><text x="136" y="309" text-anchor="middle">Developing</text><text x="136" y="325" text-anchor="middle">self and</text><text x="136" y="341" text-anchor="middle">others</text></g>
+      <g><circle cx="84" cy="161" r="58" fill="#7c1b2c"/><text x="84" y="157" text-anchor="middle">Building</text><text x="84" y="173" text-anchor="middle">connections</text></g>
+      <g><circle cx="220" cy="205" r="50" fill="#f2b705"/><text x="220" y="210" text-anchor="middle" style="fill:#5c0f1c;font-weight:700;font-size:15px">Learners</text></g>
+      <text class="cap" x="220" y="418" text-anchor="middle">The five domains of the Philippine Professional Standards for School Heads</text>
+    </svg>
+  </div>
+</header>
+
+<div class="facts">
+  <dl class="wrap">
+    <div><dt>Live sessions</dt><dd>Saturdays, October 10, 17, 24, and 31<br>7:00–11:00 AM, online</dd></div>
+    <div><dt>Dates</dt><dd>October 10 – November 1, 2026</dd></div>
+    <div><dt>Professor</dt><dd>Carlo S. Villalona, LPT, PhD</dd></div>
+    <div><dt>Learning time</dt><dd>64 hours: 16 live, 48 self-study and independent work</dd></div>
+  </dl>
+</div>
+
+<aside class="notice" aria-label="Important note on deadlines"><div class="wrap">
+  <strong>Deadlines: this website is the official reference.</strong>
+  <span>If a date or deadline in the Course Guide, a module, or any other PDF or file differs from what is shown here, follow this website.</span>
+</div></aside>
 
 <main>
-<section id="start"><div class="wrap">
-  <div class="head"><div class="eyebrow">Before anything else</div><h2>Start <em>here</em></h2><p>Five documents set up the whole module. Open the Course Guide first.</p></div>
-  <div class="grid4" id="startList"></div>
-</div></section>
 
-<section id="schedule" class="band"><div class="wrap">
-  <div class="head"><div class="eyebrow">October 10 – November 1</div><h2>Four <em>weekends</em></h2><p>Each week has a live Saturday session, four hours of assigned reading afterward, and eight hours of independent work on the weekly task.</p></div>
-  <div class="timeline" id="weeks"></div>
-</div></section>
+<!-- ============ ABOUT ============ -->
+<section id="about"><div class="wrap">
+  <div class="head">
+    <h2>About the course</h2>
+    <p>A master's course in the MAEd in Educational Management that asks each student to diagnose one real institution and design a workable plan to improve it.</p>
+  </div>
+  <div class="about">
+    <div class="prose">
+      <p>Leadership in Education critically examines contemporary theories, research, policies, and practices of educational leadership and their application to the management and transformation of educational institutions.</p>
+      <p>It develops graduate students' capacity to exercise ethical, research-informed, strategic, instructional, inclusive, innovative, and sustainable leadership in diverse educational contexts.</p>
+      <p>Following the approved syllabus, the course covers ten topics: leadership foundations; strategic and organizational development; instructional and curriculum leadership; organizational culture and change; governance and policy; resource and financial stewardship; human capital; legal and ethical leadership; digital transformation and responsible AI; and stakeholder and community engagement.</p>
+      <p>Because this is a master's course for working teachers and school leaders, students do more than summarize theories. They analyze authentic institutional issues, educational data, policies, and scholarly literature, and use that evidence to make leadership decisions that fit their own setting. The course culminates in a School Leadership Improvement Portfolio that brings a diagnosis, a strategy, a people plan, a budget, and an engagement plan together around one priority.</p>
+    </div>
+    <div class="aside">
+      <h3>Why it matters</h3>
+      <p>Research places school leadership among the strongest school-level influences on learning: an effective principal's effect on achievement is nearly as large as an effective teacher's, and it reaches every classroom in the school (Grissom et al., 2021). Republic Act No. 9155 asks the Philippine school head to be “both an instructional leader and administrative manager.” Students in this program are the teachers, coordinators, and school heads who carry that work.</p>
+      <h3>What sets it apart</h3>
+      <p>The syllabus lists more than twenty separate outputs across ten topics. In this four-week module they are consolidated into four weekly products that build on one another and on one real institution, so each student finishes with a single coherent plan and not many unconnected papers.</p>
+      <h3>Where the field sits</h3>
+      <ul>
+        <li>Leadership and management theory</li>
+        <li>Strategic planning and organizational development</li>
+        <li>Curriculum, instruction, and teacher professional learning</li>
+        <li>Organizational behavior, culture, and change</li>
+        <li>Education governance, policy, and law</li>
+        <li>School finance and resource stewardship</li>
+        <li>Human resource management</li>
+        <li>Professional ethics, equity, and inclusion</li>
+        <li>Educational technology and responsible AI</li>
+        <li>School–family–community partnership</li>
+      </ul>
+    </div>
+  </div>
 
-<section id="modules"><div class="wrap">
-  <div class="head"><div class="eyebrow">Eight reporting sessions</div><h2>Session <em>companion modules</em></h2><p>Read your group’s module before your reporting day. It is the background for the professor’s 15-minute lecture and the starting point for your inquiry question. Week 1 is professor-led and has no session module; its three topics are covered by the Course Guide and the Orientation Module.</p></div>
-  <div class="mods" id="modRows"></div>
-</div></section>
+  <h3 class="sub">How the course thinks</h3>
+  <p class="subp">The course works at three levels throughout, and moves in a deliberate sequence from theory to reflection. Every step is taken on the same institution.</p>
+  <div class="levels">
+    <article class="level"><span class="lv">Level 1</span><h3>Understand</h3><p>What do theory, research, and the Philippine standards say good school leadership is, and what do they say it does for learners?</p></article>
+    <article class="level"><span class="lv">Level 2</span><h3>Diagnose</h3><p>What does the evidence from my own institution show, what does it hide, and what one priority does it point to?</p></article>
+    <article class="level"><span class="lv">Level 3</span><h3>Design and lead</h3><p>What plan would move that priority, who must carry it, what will it cost, and how will it stay lawful, fair, and accountable?</p></article>
+  </div>
+  <ol class="chain" aria-label="Course progression">
+    <li>Theory</li><li>Diagnosis</li><li>Strategy</li><li>People</li><li>Resources</li><li>Ethics</li><li>Engagement</li><li>Reflection</li>
+  </ol>
 
-<section id="tasks" class="band"><div class="wrap">
-  <div class="head"><div class="eyebrow">One institution, four tasks</div><h2>Asynchronous <em>tasks</em></h2><p>All four tasks study the same institution and the same improvement priority. Each is scored out of 100.</p></div>
-  <div class="tasks" id="taskRows"></div>
-  <p class="small" style="margin-top:1rem">Filename: <span class="email">AT1_LastName_FirstName</span> (change the number for each task). Upload to the shared course folder.</p>
-</div></section>
-
-<section id="readings"><div class="wrap">
-  <div class="head"><div class="eyebrow">Saturday, after class</div><h2>Required <em>readings</em></h2><p id="readLead"></p></div>
-  <div class="tabs" role="tablist" id="readTabs"></div>
-  <ol class="reads" id="readList"></ol>
-</div></section>
-
-<section id="grading" class="band"><div class="wrap">
-  <div class="head"><div class="eyebrow">From the syllabus</div><h2>How your grade <em>is computed</em></h2><p>A Midterm Grade covers Weeks 1–2 and a Pre-Final Grade covers Weeks 3–4. Each uses the same three components.</p></div>
-  <div class="bar" role="img" aria-label="20 percent class standing, 50 percent projects, 30 percent examination"><div class="a">20%</div><div class="b">50%</div><div class="c">30%</div></div>
-  <ul class="legend">
-    <li style="--sw:var(--gold)"><strong>Class standing</strong><br><span class="small">Recitation, participation, oral reporting, assignments</span></li>
-    <li style="--sw:var(--maroon)"><strong>Special projects and research</strong><br><span class="small">The asynchronous tasks, two in each grading period</span></li>
-    <li style="--sw:var(--deep)"><strong>Major examination</strong><br><span class="small">Midterm and Final Examinations</span></li>
+  <h3 class="sub">How it is taught</h3>
+  <p class="subp">Because the students are working teachers and school leaders, the course uses a seminar–workshop model and keeps lecture input short.</p>
+  <ul class="chips">
+    <li>Interactive lecture and scholarly discussion</li><li>Leadership case analysis</li><li>Strategic planning workshop (SWOT, PESTLE)</li><li>School improvement planning simulation</li><li>Data analysis workshop</li><li>Professional development planning</li><li>Organizational culture audit</li><li>Change management simulation</li><li>Leadership debate</li><li>Policy review workshop</li><li>Budget simulation</li><li>Coaching simulation</li><li>Legal scenario simulation</li><li>Ethical dilemma discussion</li><li>Technology audit</li><li>Stakeholder communication workshop</li><li>Conference-style reporting</li><li>Leadership Improvement Forum</li><li>Reflective writing and peer feedback</li>
   </ul>
-  <div class="formula">
-    <div class="f"><strong>Final Grade = (Midterm Grade + Pre-Final Grade) ÷ 2</strong><span>Midterm Grade: Weeks 1–2. Pre-Final Grade: Weeks 3–4.</span></div>
-    <div class="p"><strong>2.00</strong><span>Lowest grade with credit for MAEd students (87–89%)</span></div>
+
+  <h3 class="sub" id="outcomes">Course learning outcomes</h3>
+  <p class="subp">By the end of the course, students should be able to do the following, as stated in the approved syllabus.</p>
+  <ol class="clos">
+    <li><span class="n">CLO 1</span><div><b>Theory and context</b><span>Critically examine contemporary theories, models, research, and emerging perspectives in educational leadership and management and evaluate their relevance to Philippine and global educational contexts.</span></div></li>
+    <li><span class="n">CLO 2</span><div><b>Strategic analysis</b><span>Analyze institutional conditions using strategic, organizational, and systems frameworks and formulate evidence-informed strategies for organizational development, innovation, and educational improvement.</span></div></li>
+    <li><span class="n">CLO 3</span><div><b>Instruction and capacity</b><span>Evaluate and formulate leadership strategies that strengthen curriculum implementation, instructional quality, professional learning, supervision, teacher development, and organizational capacity.</span></div></li>
+    <li><span class="n">CLO 4</span><div><b>Culture and behavior</b><span>Examine and critically evaluate the impact of organizational culture and behavior on educational outcomes and develop strategies for fostering a positive school culture.</span></div></li>
+    <li><span class="n">CLO 5</span><div><b>Technology</b><span>Explore the role of technology in educational leadership, including strategies for effectively integrating digital tools and platforms to support educational objectives.</span></div></li>
+  </ol>
+</div></section>
+
+<!-- ============ PROFESSOR ============ -->
+<section id="professor"><div class="wrap">
+  <div class="head">
+    <h2>Your professor</h2>
   </div>
+  <div class="prof">
+    <figure class="portrait"><img src="assets/professor.jpg" width="720" height="900" alt="Portrait of Carlo S. Villalona, LPT, PhD"></figure>
+    <div class="bio">
+      <h3 class="nm">Carlo S. Villalona, LPT, PhD</h3>
+      <p class="role">Course Facilitator, MAEEMNGT 2211</p>
+      <p>An applied linguist and academic leader with more than 20 years of experience across higher education and international K–12 schooling, in the Philippines and overseas. His work has moved between the classroom and academic leadership: university teaching and curriculum coordination, curriculum and instruction, and senior school leadership, including service as a deputy headmaster and as head of an International Baccalaureate school.</p>
+      <p>Much of that work has been the practical side of what this course studies. He has supported higher-education accreditation and IB authorization, led curriculum governance and syllabus standardization, and built systems for monitoring student progress. He also prepares international learners for IELTS, TOEFL iBT, and the Digital SAT.</p>
+      <div class="creds">
+        <div><h4>Education</h4><ul>
+          <li>PhD in Applied Linguistics</li>
+          <li>MAEd in English Language and Literature Teaching</li>
+          <li>BSEd in English, cum laude</li>
+        </ul></div>
+        <div><h4>Areas of practice</h4><ul>
+          <li>School and higher-education leadership</li>
+          <li>Curriculum design and academic quality assurance</li>
+          <li>Accreditation and program documentation</li>
+          <li>Language education and applied linguistics</li>
+          <li>English proficiency test preparation</li>
+        </ul></div>
+        <div><h4>Certifications</h4><ul>
+          <li>TESOL/TEFL Trainer</li>
+          <li>Diploma in TESOL</li>
+          <li>Highfield Level 4 Education and Training</li>
+          <li>Co-Active Coaching</li>
+        </ul></div>
+        <div><h4>Contact</h4><ul>
+          <li>carlo.villalon@perpetualdalta.edu.ph<span>Official course communication goes through this address only.</span></li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ START HERE ============ -->
+<section id="start"><div class="wrap">
+  <div class="head">
+    <h2>Start here</h2>
+    <p>Three documents, one template, and one reading guide set up the whole module. Open the Course Guide first, then read the Orientation Module before the October 10 session.</p>
+  </div>
+  <div class="start">
+    <a class="doc first" href="https://drive.google.com/file/d/1pliEi3QiQiYps9k7m_VtoV05N89IYCnE/view" target="_blank" rel="noopener">
+      <span class="n">Read this first</span>
+      <h3>Course Guide</h3>
+      <p>Course description, the learning outcomes, the weekly topics and tasks, the assessment plan, the final portfolio, the grading system, and the online reading list.</p>
+      <span class="go">Open the Course Guide</span>
+    </a>
+    <a class="doc" href="https://drive.google.com/file/d/1WbmQooHav7U1HuK2dYAUr7U_cZ2RplPs/view" target="_blank" rel="noopener">
+      <h3>Orientation Module</h3>
+      <p>How the course runs, and an introduction to leadership in education. Companion to the October 10 live session.</p>
+      <span class="go">Open the Orientation Module</span>
+    </a>
+    <a class="doc" href="https://drive.google.com/file/d/1UNUgk95yvBhJYGtSBjV-JeHXBatAjM0D/view" target="_blank" rel="noopener">
+      <h3>Orientation slides</h3>
+      <p>The deck used in the October 10 session, for review afterwards.</p>
+      <span class="go">Open the slides</span>
+    </a>
+    <a class="doc" href="https://canva.link/9kdg1cctqolx9vk" target="_blank" rel="noopener">
+      <h3>Masteral Learner Profile</h3>
+      <p>The one-page Canva template you fill in and share with the class before the end of Week 1.</p>
+      <span class="go">Open the Canva template</span>
+    </a>
+    <a class="doc" href="https://drive.google.com/file/d/1jo1rk4WZYF2YQV3e0s-hbDn99TJMF9zz/view" target="_blank" rel="noopener">
+      <h3>Required Readings and Reading Guide</h3>
+      <p>What to read in each source, and where each one is used in the sessions and tasks.</p>
+      <span class="go">Open the Reading Guide</span>
+    </a>
+  </div>
+</div></section>
+
+<!-- ============ SCHEDULE ============ -->
+<section id="schedule"><div class="wrap">
+  <div class="head">
+    <h2>Four weekends</h2>
+    <p>We meet live every Saturday from 7:00 to 11:00 AM. The first Saturday is led by the professor; the next three are student-led, conference-style reporting days. Every Sunday carries eight hours of independent work on that week's asynchronous task, due the following Friday.</p>
+  </div>
+  <div class="weeks">
+    <article class="week" data-sat="2026-10-10">
+      <header><div class="wk">Week 1</div><div class="dt">October 10–11</div><h4>What is educational leadership, and where is my school now?</h4></header>
+      <div class="slot liveb"><span class="tag live">Live</span><span class="when">Saturday, October 10, 7:00–11:00 AM</span>Orientation, then professor-led sessions on the foundations of educational leadership, strategic leadership, and instructional leadership.</div>
+      <div class="slot"><span class="tag self">Self-study</span><span class="when">Saturday, 4 hours</span>Week 1 readings and review of the Orientation Module.</div>
+      <div class="slot dueb"><span class="when" style="margin-top:0">Sunday, October 11, 8 hours</span><b>Asynchronous Task 1: Leadership Philosophy and Institutional Diagnosis Paper</b><br><span class="tag due">Due Friday, October 16</span><br>Share your Masteral Learner Profile this week as well.</div>
+    </article>
+    <article class="week" data-sat="2026-10-17">
+      <header><div class="wk">Week 2</div><div class="dt">October 17–18</div><h4>How do culture, policy, and resources shape what a leader can do?</h4></header>
+      <div class="slot liveb"><span class="tag live">Live</span><span class="when">Saturday, October 17, 7:00–11:00 AM</span>Sessions 1–3, reported by Groups 1–3: culture and change, governance and policy, resources and finance.</div>
+      <div class="slot"><span class="tag self">Self-study</span><span class="when">Saturday, 4 hours</span>Session 1–3 companion modules and Week 2 readings.</div>
+      <div class="slot dueb"><span class="when" style="margin-top:0">Sunday, October 18, 8 hours</span><b>Asynchronous Task 2: Culture, Policy, and Resource Brief</b><br><span class="tag due">Due Friday, October 23</span></div>
+    </article>
+    <article class="week" data-sat="2026-10-24">
+      <header><div class="wk">Week 3</div><div class="dt">October 24–25</div><h4>How do leaders develop people and decide rightly?</h4></header>
+      <div class="slot liveb"><span class="tag live">Live</span><span class="when">Saturday, October 24, 7:00–11:00 AM</span>Sessions 4–6, reported by Groups 4–6: human capital, educational law, and ethics, equity, and inclusion.</div>
+      <div class="slot"><span class="tag self">Self-study</span><span class="when">Saturday, 4 hours</span>Session 4–6 companion modules and Week 3 readings.</div>
+      <div class="slot dueb"><span class="when" style="margin-top:0">Sunday, October 25, 8 hours</span><b>Asynchronous Task 3: Faculty Development and Succession Plan (Draft) with Legal–Ethical Case Analysis</b><br><span class="tag due">Due Friday, October 30</span></div>
+    </article>
+    <article class="week" data-sat="2026-10-31">
+      <header><div class="wk">Week 4</div><div class="dt">October 31 – November 1</div><h4>How do leaders take a school forward, digitally and with its community?</h4></header>
+      <div class="slot liveb"><span class="tag live">Live</span><span class="when">Saturday, October 31, 7:00–11:00 AM</span>Sessions 7–8, reported by Groups 7–8, then the Leadership Improvement Forum and the course synthesis.</div>
+      <div class="slot"><span class="tag self">Self-study</span><span class="when">Saturday, 4 hours</span>Session 7–8 companion modules and Week 4 readings.</div>
+      <div class="slot dueb"><span class="when" style="margin-top:0">Sunday, November 1, 8 hours</span><b>Asynchronous Task 4: School Leadership Improvement Portfolio with Reflective Commentary</b><br><span class="tag due">Due Friday, November 6</span></div>
+    </article>
+  </div>
+  <div class="key"><span><span class="tag live">Live</span> synchronous, online</span><span><span class="tag self">Self-study</span> at your own pace</span><span><span class="tag due">Due</span> the Friday after each Sunday session</span></div>
   <div class="exams">
-    <div class="card"><div class="kind">End of Week 2</div><h3>Midterm Examination</h3><div class="small">Covers Weeks 1–2: the three Week 1 topics (foundations, strategic leadership, instructional leadership) and Sessions 1–3. Window to be announced.</div></div>
-    <div class="card"><div class="kind">End of Week 4</div><h3>Final Examination</h3><div class="small">Covers Weeks 3–4: Sessions 4–8, with integrative items across the whole course. Window to be announced.</div></div>
+    <article class="exam"><span class="tag live">Examination</span><h3>Midterm Examination</h3><p class="xd">End of Week 2, date to be announced</p><p>Covers Weeks 1–2: the three Week 1 topics (foundations, strategic leadership, instructional leadership) and Sessions 1–3.</p></article>
+    <article class="exam"><span class="tag live">Examination</span><h3>Final Examination</h3><p class="xd">End of Week 4, date to be announced</p><p>Covers Weeks 3–4: Sessions 4–8, with integrative items across the whole course.</p></article>
   </div>
 </div></section>
 
+<!-- ============ MODULES ============ -->
+<section id="modules"><div class="wrap">
+  <div class="head">
+    <h2>Session companion modules</h2>
+    <p>One module for the orientation and one for each of the eight sessions. Week 1 has no separate session modules: its three topics are covered in the Orientation Module and the live session. Study every session, not only your own group's: you will be questioning your classmates on each reporting day.</p>
+  </div>
+  <div class="mods">
+    <a class="mod zero" href="https://drive.google.com/file/d/1WbmQooHav7U1HuK2dYAUr7U_cZ2RplPs/view" target="_blank" rel="noopener">
+      <span class="no">0</span><span class="t">Orientation and Course Introduction<span class="s">How the course runs, and what educational leadership is. Companion to the October 10 live session.</span></span><span class="tag live">Week 1</span><span class="open">Open PDF</span></a>
+    <div class="wkrow">Week 2, reported live on October 17</div>
+    <a class="mod" href="https://drive.google.com/file/d/1fA-9Vn7VoEFLLjijhIxjfH2wThwZgUAR/view" target="_blank" rel="noopener">
+      <span class="no">1</span><span class="t">Leading Organizational Culture, Change, and Innovation<span class="s">Organizational culture, change and innovation leadership, conflict management, and leading through a crisis.</span></span><span class="tag a">Group 1</span><span class="open">Open PDF</span></a>
+    <a class="mod" href="https://drive.google.com/file/d/1C4LGp-bMMkNrbtfdr4xuHV3jks1KiuCn/view" target="_blank" rel="noopener">
+      <span class="no">2</span><span class="t">Educational Governance, Policy, and Systems Leadership<span class="s">Governance structures, education policy, school-based management, and reform, read from the school head's desk.</span></span><span class="tag a">Group 2</span><span class="open">Open PDF</span></a>
+    <a class="mod" href="https://drive.google.com/file/d/1VM-8MIMK9CNuJrXHn9CI0BAMPD--oXso/view" target="_blank" rel="noopener">
+      <span class="no">3</span><span class="t">Strategic Resource and Financial Leadership<span class="s">Education finance, budget planning, resource allocation, financial accountability, and grants.</span></span><span class="tag a">Group 3</span><span class="open">Open PDF</span></a>
+    <div class="wkrow">Week 3, reported live on October 24</div>
+    <a class="mod" href="https://drive.google.com/file/d/18vYEGGBHiqzClLBSJjevYMVi8uwJV9sn/view" target="_blank" rel="noopener">
+      <span class="no">4</span><span class="t">Human Capital Leadership and Talent Development<span class="s">Recruitment, performance management, professional development, and succession planning.</span></span><span class="tag a">Group 4</span><span class="open">Open PDF</span></a>
+    <a class="mod" href="https://drive.google.com/file/d/1OkjcyIKBhlVRRrAclN2O-ui2S2aFpx9l/view" target="_blank" rel="noopener">
+      <span class="no">5</span><span class="t">Educational Law for School Leaders<span class="s">The Education Act of 1982, the Magna Carta for Public School Teachers, child protection, data privacy, and inclusive education law.</span></span><span class="tag a">Group 5</span><span class="open">Open PDF</span></a>
+    <a class="mod" href="https://drive.google.com/file/d/1ytni4gO_FYV67sMqFTWCSDINN4Ub3CNQ/view" target="_blank" rel="noopener">
+      <span class="no">6</span><span class="t">Ethical Leadership, Equity, and Inclusion<span class="s">Ethical dilemmas and how to reason through them, equity, and inclusive, non-discriminatory practice.</span></span><span class="tag a">Group 6</span><span class="open">Open document</span></a>
+    <div class="wkrow">Week 4, reported live on October 31</div>
+    <a class="mod" href="https://drive.google.com/file/d/1nYScEtR3FGc70zaxAb5Cf2kIUfD2LQhk/view" target="_blank" rel="noopener">
+      <span class="no">7</span><span class="t">Digital Transformation and Innovation Leadership in Education<span class="s">Digital leadership, AI in education, technology integration, digital governance, and cybersecurity.</span></span><span class="tag a">Group 7</span><span class="open">Open PDF</span></a>
+    <a class="mod" href="https://drive.google.com/file/d/1Y1PbbWhdcMniz-FFRbcF32JSQZ9pOL00/view" target="_blank" rel="noopener">
+      <span class="no">8</span><span class="t">Community and Stakeholder Engagement<span class="s">Community building, stakeholder engagement and communication, and partnership development.</span></span><span class="tag a">Group 8</span><span class="open">Open PDF</span></a>
+  </div>
+</div></section>
+
+<!-- ============ TASKS ============ -->
+<section id="tasks"><div class="wrap">
+  <div class="head">
+    <h2>Asynchronous tasks</h2>
+    <p>The four tasks build on one another. Choose one institution in Week 1 and stay with it: every later task returns to the same institution and the same priority, and the fourth assembles them into your final portfolio.</p>
+  </div>
+  <div class="tasks">
+    <article class="task">
+      <div class="top"><span class="tag due">Asynchronous Task 1</span><span class="pct">25%<small>of the Midterm Grade</small></span></div>
+      <h3>Leadership Philosophy and Institutional Diagnosis Paper</h3>
+      <p>Choose the institution you will study all month, normally your own workplace. State your leadership philosophy, grounded in two leadership theories and the Philippine Professional Standards for School Heads. Then diagnose the institution with a SWOT matrix, a short PESTLE scan, and at least four indicators, and name one priority for improving teaching and learning.</p>
+      <div class="meta"><span class="tag self">1,000–1,500 words plus a SWOT matrix, APA 7</span><span class="tag self">100 points</span><span class="tag self">Assigned Sunday, October 11</span><span class="tag due">Due Friday, October 16</span></div>
+      <a class="go" href="https://drive.google.com/file/d/1YkNaP_vEBDHBcDi7s4FtjS328uvGF5GG/view" target="_blank" rel="noopener">Open the Task 1 guidelines and rubric</a>
+    </article>
+    <article class="task">
+      <div class="top"><span class="tag due">Asynchronous Task 2</span><span class="pct">25%<small>of the Midterm Grade</small></span></div>
+      <h3>Culture, Policy, and Resource Brief</h3>
+      <p>Examine the three conditions that decide whether your priority can be achieved. Audit the culture using Schein's three levels, analyze one policy that governs your institution in its original text, propose a change strategy that names the people and the likely resistance, and cost the first year in a one-page budget.</p>
+      <div class="meta"><span class="tag self">1,500–2,000 words plus a costed budget, APA 7</span><span class="tag self">100 points</span><span class="tag self">Assigned Sunday, October 18</span><span class="tag due">Due Friday, October 23</span></div>
+      <a class="go" href="https://drive.google.com/file/d/1szabzDcXCxTyl3X3lFdQKvmd1yDZiitT/view" target="_blank" rel="noopener">Open the Task 2 guidelines and rubric</a>
+    </article>
+    <article class="task">
+      <div class="top"><span class="tag due">Asynchronous Task 3</span><span class="pct">20%<small>of the Pre-Final Grade</small></span></div>
+      <h3>Faculty Development and Succession Plan (Draft) with Legal–Ethical Case Analysis</h3>
+      <p>Part A designs a one-year faculty development plan for the teacher learning need behind your priority, protects teachers' time, and adds a succession component. Part B analyzes one real legal–ethical dilemma from your experience, with all names removed: the facts, the rule that applies, at least two ethical lenses, the options, and your decision.</p>
+      <div class="meta"><span class="tag self">Part A 800–1,000 words, Part B 600–800 words</span><span class="tag self">100 points</span><span class="tag self">Structured peer feedback</span><span class="tag self">Assigned Sunday, October 25</span><span class="tag due">Due Friday, October 30</span></div>
+      <a class="go" href="https://drive.google.com/file/d/1CwZBsOaShZ8Zs2QswYvvFzkPnfpn3Xh3/view" target="_blank" rel="noopener">Open the Task 3 guidelines and rubric</a>
+    </article>
+    <article class="task">
+      <div class="top"><span class="tag due">Asynchronous Task 4</span><span class="pct">30%<small>of the Pre-Final Grade</small></span></div>
+      <h3>School Leadership Improvement Portfolio with Reflective Commentary</h3>
+      <p>The major final performance task. Revise Tasks 1 to 3 from feedback, add a technology audit and responsible AI plan, a stakeholder engagement and communication plan, a legal, ethical, equity, and data privacy review, and monitoring and evaluation. Assemble everything as one plan for one institution, and close with a reflective commentary.</p>
+      <div class="meta"><span class="tag self">15–20 pages plus a 500–700 word commentary</span><span class="tag self">100 points</span><span class="tag self">Sixteen parts, see the guidelines</span><span class="tag self">Assigned Sunday, November 1</span><span class="tag due">Due Friday, November 6</span></div>
+      <a class="go" href="https://drive.google.com/file/d/196tazMvM6EAnbRHvN4oTirpst9Z7aWb_/view" target="_blank" rel="noopener">Open the Task 4 guidelines and rubric</a>
+    </article>
+  </div>
+  <p class="note"><b>Submitting.</b> Each task is due on the Friday after its Sunday asynchronous session, before the next live session. Save it as <b>AT[number]_LastName_FirstName</b>, for example AT1_DelaCruz_Juan, as a Word document or PDF in APA 7th edition, and upload it to the shared course folder announced by the professor. For Tasks 1 to 3, post a short summary on the discussion board and reply substantively to two classmates. End every paper with a short note on whether and how you used AI. Where a PDF gives a different deadline, the dates on this website apply.</p>
+</div></section>
+
+<!-- ============ CONFERENCE ============ -->
+<div class="conf" id="conference"><div class="wrap">
+  <div class="head">
+    <h2>October 17, 24, and 31: conference-style reporting</h2>
+    <p>The last three Saturdays run as a small academic conference. Each of the eight groups has its own session: the professor frames the topic in a 15-minute lecture, then every member presents alone for 10 minutes on an assigned inquiry question, with up to 5 slides, and takes 5 minutes of follow-up questions. The group shares a topic and a reporting day, not a presentation grade.</p>
+  </div>
+
+  <div class="strands">
+    <article class="strand">
+      <div class="who"><span class="tag a">Group 1</span><span>Session 1 · Oct 17 · 4 members</span></div>
+      <h3>Leading Organizational Culture, Change, and Innovation</h3>
+      <p class="sub2">Organizational culture, change leadership, innovation leadership, conflict management, crisis leadership.</p>
+      <details><summary>Inquiry questions, one per member</summary><ol>
+        <li>Conduct a brief culture audit of a school you know: what people see and do, what the school says it values, and what is simply taken for granted. Where is the widest gap between the stated values and actual practice, and what should a leader do first to narrow it?</li>
+        <li>Fullan (2021) contrasts “right” and “wrong” drivers of system change. Which wrong driver do you see most clearly in a recent change in your school or division, and what would the corresponding right driver look like there?</li>
+        <li>Why do teachers resist changes they privately agree with? Take one recent change in your institution and show how a leader could have carried it through without breaking trust.</li>
+        <li>When a school is disrupted, by a typhoon and prolonged class suspension or by open conflict among faculty, what separates leading through the crisis from merely managing it, and what should already be in place before the crisis comes?</li></ol></details>
+    </article>
+    <article class="strand">
+      <div class="who"><span class="tag a">Group 2</span><span>Session 2 · Oct 17 · 4 members</span></div>
+      <h3>Educational Governance, Policy, and Systems Leadership</h3>
+      <p class="sub2">Governance structures, educational policies, school-based management, educational reforms.</p>
+      <details><summary>Inquiry questions, one per member</summary><ol>
+        <li>Republic Act No. 9155 gives the school head “authority, accountability and responsibility” for the school. In practice, how much real decision-making room does a public school head, or a private school principal, have, and where exactly does it end?</li>
+        <li>Is school-based management in the Philippines genuine decentralization or delegated paperwork? Use a School Governance Council or a School Improvement Plan process you know as your evidence.</li>
+        <li>Choose one finding of the Second Congressional Commission on Education (EDCOM II). At which level does responsibility for it lie (national, division, or school), and what can a school leader do about it without waiting for higher offices?</li>
+        <li>When a national or division policy does not fit local conditions, should a school leader comply, adapt, or push back? Use one concrete policy to show how a leader can adapt responsibly while remaining accountable.</li></ol></details>
+    </article>
+    <article class="strand">
+      <div class="who"><span class="tag a">Group 3</span><span>Session 3 · Oct 17 · 3 members</span></div>
+      <h3>Strategic Resource and Financial Leadership</h3>
+      <p class="sub2">Educational finance, budget planning, resource allocation, financial accountability, grant management.</p>
+      <details><summary>Inquiry questions, one per member</summary><ol>
+        <li>With a fixed school MOOE or department budget and several competing needs, what criteria should decide how the money is allocated, and who should take part in the decision?</li>
+        <li>Transparency boards and School Report Cards are required of schools. Do they produce real accountability? What would make a school's financial reporting meaningful to parents and teachers?</li>
+        <li>Schools draw on PTA contributions, the local government's Special Education Fund, donations, and grants. What are the ethical and practical risks of relying on outside resources, and how should a leader manage them?</li></ol></details>
+    </article>
+    <article class="strand">
+      <div class="who"><span class="tag a">Group 4</span><span>Session 4 · Oct 24 · 4 members</span></div>
+      <h3>Human Capital Leadership and Talent Development</h3>
+      <p class="sub2">Human resource management and recruitment, performance management, professional development, succession planning.</p>
+      <details><summary>Inquiry questions, one per member</summary><ol>
+        <li>The PIDS study by David, Albert, and Vizmanos (2019) documents the weight of non-teaching tasks on public school teachers. As a school leader with no additional staff, what could you realistically take off teachers' plates, and how would you decide?</li>
+        <li>Does the performance management system in your institution develop teachers or merely rate them? What would have to change in how a school head uses it for it to improve teaching?</li>
+        <li>Darling-Hammond, Hyler, and Gardner (2017) identify seven features of effective professional development. Evaluate one LAC session or in-service training you attended against them, and redesign it.</li>
+        <li>When a strong school head retires or is transferred, improvement often stops. How should a school identify and prepare its next leaders, given the hiring and promotion rules it must follow?</li></ol></details>
+    </article>
+    <article class="strand">
+      <div class="who"><span class="tag a">Group 5</span><span>Session 5 · Oct 24 · 4 members</span></div>
+      <h3>Educational Law for School Leaders</h3>
+      <p class="sub2">The Education Act of 1982, the Magna Carta for Public School Teachers, child protection, data privacy, inclusive education law.</p>
+      <details><summary>Inquiry questions, one per member</summary><ol>
+        <li>A parent demands that a teacher be disciplined for a classroom incident that has been posted online. What do the teacher's right to due process and the school's duty to protect the child each require, and what should the school head do in the first 48 hours?</li>
+        <li>A teacher posts class photos and a list of grades in a group chat; an outside organization asks the school for learner records. What does the Data Privacy Act of 2012 require in each case, and which everyday habits in schools commonly violate it?</li>
+        <li>A learner with a disability is refused enrollment because the school “lacks facilities.” What does Republic Act No. 11650 require of the school, and what should a leader do when the resources truly are lacking?</li>
+        <li>The Education Act of 1982 sets out the rights and duties of students, parents, teachers, and school administrators. Where do these rights most often collide in everyday school decisions, and how should a leader resolve the collision?</li></ol></details>
+    </article>
+    <article class="strand">
+      <div class="who"><span class="tag a">Group 6</span><span>Session 6 · Oct 24 · 3 members</span></div>
+      <h3>Ethical Leadership, Equity, and Inclusion</h3>
+      <p class="sub2">Ethical leadership, ethical dilemmas and decision-making, equity, inclusive and non-discriminatory practice.</p>
+      <details><summary>Inquiry questions, one per member</summary><ol>
+        <li>A superior instructs you to do something that is permitted but, in your judgment, unfair to learners, for example promoting all learners to improve the school's statistics. How should you reason about it, and what should you actually do?</li>
+        <li>You discover that a close colleague has altered grades or misused school funds. In a workplace shaped by <i>pakikisama</i> and <i>utang na loob</i>, what does ethical leadership require, and how can it be done justly?</li>
+        <li>Policies that look neutral can disadvantage particular learners: fees, uniform rules, device requirements, class schedules. Identify one such policy in a school you know and redesign it so that it is fair.</li></ol></details>
+    </article>
+    <article class="strand">
+      <div class="who"><span class="tag a">Group 7</span><span>Session 7 · Oct 31 · 4 members</span></div>
+      <h3>Digital Transformation and Innovation Leadership in Education</h3>
+      <p class="sub2">Digital leadership, AI in education, technology integration, digital governance, cybersecurity.</p>
+      <details><summary>Inquiry questions, one per member</summary><ol>
+        <li>Conduct a short technology audit of your school. Which digital tools have actually improved teaching or management, and which have only added work? What should the leader stop, keep, and start?</li>
+        <li>Should a school allow teachers and learners to use generative AI? Draft the core of a school-level policy that is consistent with DepEd's guidance on AI and with the Data Privacy Act of 2012.</li>
+        <li>How should a leader pursue digital transformation in a school where many learners and teachers lack devices and reliable connectivity, without widening the gap between those who have and those who have not?</li>
+        <li>Who is responsible for learner data in a school (enrollment records, grades, health and family information), and what minimum safeguards should a school head put in place against loss, leakage, and misuse?</li></ol></details>
+    </article>
+    <article class="strand">
+      <div class="who"><span class="tag a">Group 8</span><span>Session 8 · Oct 31 · 3 members</span></div>
+      <h3>Community and Stakeholder Engagement, and Course Synthesis</h3>
+      <p class="sub2">Community building, stakeholder engagement and communication, partnership development, course synthesis.</p>
+      <details><summary>Inquiry questions, one per member</summary><ol>
+        <li>Mapp and Kuttner (2013) argue that families and school staff both need capabilities, connections, confidence, and the right beliefs to work together. Evaluate one PTA or Brigada Eskwela activity you know: does it build capacity, or does it only collect contributions? Redesign it.</li>
+        <li>Schools enter partnerships with local government, alumni, businesses, and donors, including under the Adopt-a-School Act. What makes a partnership serve learning and not publicity, and when should a leader decline a partner?</li>
+        <li>As the closing presenter of the course: synthesize the ten topics into a single, defensible statement of what responsible educational leadership should look like in a Philippine school today, including your position on the role of AI.</li></ol></details>
+    </article>
+    <article class="strand" style="background:var(--gold-soft)">
+      <div class="who"><span class="tag live">Class list</span><span>Pending</span></div>
+      <h3>Group membership will be announced</h3>
+      <p>Group sizes shown here are a planning basis. Names, final group sizes, and which question each member answers will be confirmed by the professor from the official class list.</p>
+    </article>
+  </div>
+
+  <h3 class="csub">Running orders, 7:00–11:00 AM</h3>
+  <div class="three">
+    <div class="panel">
+      <h3>Saturday, October 17</h3>
+      <ul class="run sm">
+        <li><span class="tm">7:00–7:15</span><span>Professor's lecture, Session 1</span></li>
+        <li><span class="tm">7:15–8:15</span><span>Group 1: four presenters</span></li>
+        <li><span class="tm">8:15–8:20</span><span>Open forum and synthesis</span></li>
+        <li><span class="tm">8:20–8:35</span><span>Professor's lecture, Session 2</span></li>
+        <li><span class="tm">8:35–9:35</span><span>Group 2: four presenters</span></li>
+        <li><span class="tm">9:35–9:40</span><span>Open forum and synthesis</span></li>
+        <li><span class="tm">9:40–9:55</span><span>Professor's lecture, Session 3</span></li>
+        <li><span class="tm">9:55–10:40</span><span>Group 3: three presenters</span></li>
+        <li><span class="tm">10:40–10:50</span><span>Open forum and synthesis</span></li>
+        <li><span class="tm">10:50–11:00</span><span>Closing: Companion Module and Midterm Examination briefing</span></li>
+      </ul>
+      <p class="sm-note">No scheduled break. The 10-minute limit is enforced strictly.</p>
+    </div>
+    <div class="panel">
+      <h3>Saturday, October 24</h3>
+      <ul class="run sm">
+        <li><span class="tm">7:00–7:15</span><span>Professor's lecture, Session 4</span></li>
+        <li><span class="tm">7:15–8:15</span><span>Group 4: four presenters</span></li>
+        <li><span class="tm">8:15–8:20</span><span>Open forum and synthesis</span></li>
+        <li><span class="tm">8:20–8:35</span><span>Professor's lecture, Session 5</span></li>
+        <li><span class="tm">8:35–9:35</span><span>Group 5: four presenters</span></li>
+        <li><span class="tm">9:35–9:40</span><span>Open forum and synthesis</span></li>
+        <li><span class="tm">9:40–9:55</span><span>Professor's lecture, Session 6</span></li>
+        <li><span class="tm">9:55–10:40</span><span>Group 6: three presenters</span></li>
+        <li><span class="tm">10:40–10:50</span><span>Open forum and synthesis</span></li>
+        <li><span class="tm">10:50–11:00</span><span>Closing: Companion Module briefing</span></li>
+      </ul>
+      <p class="sm-note">No scheduled break. The 10-minute limit is enforced strictly.</p>
+    </div>
+    <div class="panel">
+      <h3>Saturday, October 31</h3>
+      <ul class="run sm">
+        <li><span class="tm">7:00–7:15</span><span>Professor's lecture, Session 7</span></li>
+        <li><span class="tm">7:15–8:15</span><span>Group 7: four presenters</span></li>
+        <li><span class="tm">8:15–8:20</span><span>Open forum and synthesis</span></li>
+        <li><span class="tm">8:20–8:35</span><span>Professor's lecture, Session 8</span></li>
+        <li><span class="tm">8:35–9:20</span><span>Group 8: three presenters</span></li>
+        <li><span class="tm">9:20–9:25</span><span>Open forum and synthesis</span></li>
+        <li><span class="tm">9:25–9:35</span><span>Break</span></li>
+        <li><span class="tm">9:35–10:35</span><span>Leadership Improvement Forum, Groups 1–8</span></li>
+        <li><span class="tm">10:35–11:00</span><span>Course synthesis and closing: final portfolio and Final Examination briefing</span></li>
+      </ul>
+      <p class="sm-note">Each presenter slot is 10 minutes plus 5 minutes of follow-up questions.</p>
+    </div>
+  </div>
+
+  <div class="two">
+    <div class="panel">
+      <h3>What every presentation must do</h3>
+      <ul class="rules">
+        <li>Answer your own assigned inquiry question, directly and with a position.</li>
+        <li>Stay within 10 minutes and 5 slides. Rehearse with a timer.</li>
+        <li>Rest on at least two scholarly or official sources.</li>
+        <li>Name a concrete Philippine school, policy, program, or institution.</li>
+        <li>Remove the names of learners, colleagues, and parents.</li>
+        <li>Expect up to three questions from classmates and two from the professor, who may speak as a division official, school head, or parent.</li>
+        <li>When you are not presenting, come with questions for the day's presenters.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Leadership Improvement Forum, October 31</h3>
+      <p class="fine" style="margin-top:0">Each group presents one member's improvement and stakeholder engagement plan to a mock stakeholder panel: 5 minutes, then 2 minutes of questions.</p>
+      <ul class="rules" style="margin-top:12px">
+        <li>State the improvement problem and the evidence for it.</li>
+        <li>Present the strategy and why it suits the institution's culture and resources.</li>
+        <li>Show the cost and where the funds will come from.</li>
+        <li>Explain how teachers, parents, learners, and partners are consulted and informed.</li>
+        <li>Address legal, ethical, equity, and data privacy implications.</li>
+        <li>Name two indicators that will show whether the plan is working.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Rubric A: individual inquiry presentation</h3>
+      <table class="rub">
+        <tr><td>Content mastery and accuracy</td><td>35</td></tr>
+        <tr><td>Critical analysis and leadership application</td><td>30</td></tr>
+        <tr><td>Delivery, slide design, and time management</td><td>20</td></tr>
+        <tr><td>Response to follow-up questions</td><td>15</td></tr>
+        <tr><td>Individual score, per presenter</td><td>100</td></tr>
+      </table>
+      <p class="fine">Scored separately for each presenter and never averaged across the group. Save your slides as <code>Group[Number]-LastName-SlidesPresentation</code></p>
+    </div>
+    <div class="panel">
+      <h3>Rubric B: Companion Module</h3>
+      <table class="rub">
+        <tr><td>Content accuracy and depth</td><td>20</td></tr>
+        <tr><td>Critical analysis</td><td>20</td></tr>
+        <tr><td>Application to school leadership</td><td>20</td></tr>
+        <tr><td>Leadership scenario and discussion questions</td><td>15</td></tr>
+        <tr><td>Integration of reporting and peer feedback</td><td>15</td></tr>
+        <tr><td>Scholarly writing, organization, and citations</td><td>10</td></tr>
+        <tr><td>Group score, shared by all members</td><td>100</td></tr>
+      </table>
+      <p class="fine">After its reporting day, each group writes one 5–8 page module that weaves every member's answer into a single argument, revised using the questions raised in the session, with an annotated bibliography of at least 5 sources. Save it as <code>Group[Number]-CompanionModule</code>. Due date to be announced.</p>
+    </div>
+  </div>
+</div></div>
+
+<!-- ============ PROFILE ============ -->
+<section id="profile"><div class="wrap">
+  <div class="head">
+    <h2>Masteral Learner Profile</h2>
+    <p>A one-page introduction, made in Canva and shared with the class before the end of Week 1. It tells your classmates and your professor where you lead from, and it gives you a starting point for the Week 1 paper.</p>
+  </div>
+  <div class="profile">
+    <div>
+      <ol class="steps">
+        <li>Open the Canva template and make your own copy.</li>
+        <li>Add a formal, recent photo and fill in every field.</li>
+        <li>Keep it to one page and readable on a phone.</li>
+        <li>Download it as a PDF or PNG, using the file name printed at the bottom of the template.</li>
+        <li>Share it with the class before the end of Week 1.</li>
+      </ol>
+      <div class="btns"><a class="btn dark" href="https://canva.link/9kdg1cctqolx9vk" target="_blank" rel="noopener">Open the Canva template</a></div>
+      <p class="note"><b>The field that matters most</b> is “a leadership challenge I live with”: one real problem in your school that better leadership could improve. It can become the priority you diagnose in your Week 1 paper and carry through to the final portfolio.</p>
+    </div>
+    <div class="sheet">
+      <h3>What the profile asks for</h3>
+      <ul class="fields">
+        <li>Full name and preferred name</li>
+        <li>Photo</li>
+        <li>Current position and institution</li>
+        <li>Years in education, highest degree and specialization</li>
+        <li>My school or work context</li>
+        <li>My leadership role, formal or informal</li>
+        <li>A leadership challenge I live with</li>
+        <li>Research interests or thesis direction</li>
+        <li>What I hope to gain from this course</li>
+        <li>A question I bring to this course</li>
+        <li>One sentence about me as an educational leader</li>
+        <li>School email and reporting group</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ THE FIELD ============ -->
+<section id="field"><div class="wrap">
+  <div class="head">
+    <h2>The field of study</h2>
+    <p>What the course covers, the questions it keeps returning to, the Philippine laws and standards a school leader works within, and the scholars whose work it draws on.</p>
+  </div>
+
+  <h3 class="sub" style="margin-top:0">Ten major themes</h3>
+  <p class="subp">The ten themes are the ten topics of the syllabus, in the syllabus order. Each is shown with the domain of the Philippine Professional Standards for School Heads it most closely relates to.</p>
+  <div class="themes">
+    <article class="theme"><span class="lv">Theme 1 · Week 1</span><h3>Contemporary Foundations of Educational Leadership</h3><span class="dm">Leading Strategically</span><ul><li>Evolution of educational leadership</li><li>Leadership vs. management</li><li>Contemporary leadership theories</li><li>Leadership competencies</li><li>Philippine and global leadership trends</li></ul></article>
+    <article class="theme"><span class="lv">Theme 2 · Week 1</span><h3>Strategic Leadership and Organizational Development</h3><span class="dm">Leading Strategically</span><ul><li>VMGO alignment and strategic planning models</li><li>SWOT and PESTLE analysis</li><li>Organizational development</li><li>School improvement planning</li></ul></article>
+    <article class="theme"><span class="lv">Theme 3 · Week 1</span><h3>Instructional Leadership for Teaching Excellence and Student Success</h3><span class="dm">Focusing on Teaching and Learning</span><ul><li>Curriculum leadership and instructional supervision</li><li>Data-driven decision-making</li><li>Professional learning communities, coaching, and mentoring</li></ul></article>
+    <article class="theme"><span class="lv">Theme 4 · Week 2</span><h3>Leading Organizational Culture, Change, and Innovation</h3><span class="dm">Developing Self and Others; Building Connections</span><ul><li>Organizational culture</li><li>Change leadership</li><li>Innovation leadership</li><li>Conflict management</li><li>Crisis leadership</li></ul></article>
+    <article class="theme"><span class="lv">Theme 5 · Week 2</span><h3>Educational Governance, Policy, and Systems Leadership</h3><span class="dm">Leading Strategically</span><ul><li>Governance structures</li><li>Educational policies</li><li>School-based management</li><li>Educational reforms</li></ul></article>
+    <article class="theme"><span class="lv">Theme 6 · Week 2</span><h3>Strategic Resource and Financial Leadership</h3><span class="dm">Managing School Operations and Resources</span><ul><li>Educational finance</li><li>Budget planning</li><li>Resource allocation</li><li>Financial accountability</li><li>Grant management</li></ul></article>
+    <article class="theme"><span class="lv">Theme 7 · Week 3</span><h3>Human Capital Leadership and Talent Development</h3><span class="dm">Developing Self and Others</span><ul><li>Human resource management and recruitment</li><li>Performance management</li><li>Succession planning</li></ul></article>
+    <article class="theme"><span class="lv">Theme 8 · Week 3</span><h3>Legal and Ethical Issues in Education Leadership</h3><span class="dm">Leading Strategically; Managing School Operations and Resources</span><ul><li>Educational law</li><li>Ethical leadership</li><li>Equity and inclusion</li></ul></article>
+    <article class="theme"><span class="lv">Theme 9 · Week 4</span><h3>Digital Transformation and Innovation Leadership in Education</h3><span class="dm">Managing School Operations and Resources</span><ul><li>Digital leadership</li><li>AI in education</li><li>Technology integration</li><li>Digital governance</li><li>Cybersecurity</li></ul></article>
+    <article class="theme"><span class="lv">Theme 10 · Week 4</span><h3>Community and Stakeholder Engagement</h3><span class="dm">Building Connections</span><ul><li>Community building</li><li>Stakeholder engagement</li><li>Partnership development</li></ul></article>
+  </div>
+
+  <h3 class="sub">Twelve guiding questions</h3>
+  <p class="subp">Students return to these questions throughout the four weeks.</p>
+  <ol class="qs">
+    <li>What distinguishes leadership from management, and when does a school need more of one than of the other?</li>
+    <li>Which leadership theories actually explain what effective leaders do in Philippine schools?</li>
+    <li>Through what pathways does a leader influence learning in classrooms that the leader does not teach?</li>
+    <li>How do we know what our school most needs: what do the data say, and what do they hide?</li>
+    <li>Why do improvement plans so often stay on paper?</li>
+    <li>How is a school's culture formed, and how can it be changed without breaking trust?</li>
+    <li>Who really decides in Philippine education, and how much room does a school leader have?</li>
+    <li>How should scarce resources be allocated, and how do we show the community that they were used well?</li>
+    <li>How do leaders grow teachers and future leaders, and not merely evaluate them?</li>
+    <li>What should a leader do when law, ethics, and loyalty pull in different directions?</li>
+    <li>What is the responsible role of artificial intelligence and digital tools in leading a school?</li>
+    <li>What kind of leader am I becoming, and for whom?</li>
+  </ol>
+
+  <h3 class="sub">The Philippine framework for school leadership, 1966 to 2026</h3>
+  <p class="subp">The laws, department orders, and reports that define what a Philippine school leader may do, must do, and is asked to answer for. All are read in their original text in the course.</p>
+  <ol class="tl">
+    <li><span class="yr">1966</span><div><b>Republic Act No. 4670, Magna Carta for Public School Teachers</b><span>Sets out the rights, working conditions, and safeguards of public school teachers, including due process in administrative cases.</span></div></li>
+    <li><span class="yr">1982</span><div><b>Batas Pambansa Blg. 232, Education Act of 1982</b><span>States the rights and duties of students, parents, teachers, and school administrators, the ground on which most everyday school disputes are settled.</span></div></li>
+    <li><span class="yr">1998</span><div><b>Republic Act No. 8525, Adopt-a-School Act</b><span>Opens public schools to assistance from private entities, the legal basis for many school partnerships.</span></div></li>
+    <li class="pivot"><span class="yr">2001</span><div><b>Republic Act No. 9155, Governance of Basic Education Act</b><span>Establishes shared governance in basic education and describes the school head as “both an instructional leader and administrative manager.”</span></div></li>
+    <li><span class="yr">2012</span><div><b>Republic Act No. 10173, Data Privacy Act</b><span>Governs how schools collect, keep, share, and dispose of the personal information of learners, parents, and staff.</span></div></li>
+    <li><span class="yr">2014</span><div><b>DepEd Order No. 12, on school MOOE</b><span>Guidelines on the direct release of Maintenance and Other Operating Expenses allocations to schools, later revised in 2019.</span></div></li>
+    <li><span class="yr">2015</span><div><b>DepEd Order No. 44, the enhanced School Improvement Plan</b><span>Sets the school improvement planning process and the School Report Card.</span></div></li>
+    <li><span class="yr">2016</span><div><b>DepEd Order No. 35, the Learning Action Cell</b><span>Makes the LAC the school-based strategy for teachers' continuing professional development.</span></div></li>
+    <li class="pivot"><span class="yr">2020</span><div><b>DepEd Order No. 24, Philippine Professional Standards for School Heads</b><span>Defines what school heads are expected to know and do across five domains and four career stages. The course reads its ten topics against these domains.</span></div></li>
+    <li><span class="yr">2022</span><div><b>Republic Act No. 11650, on inclusive education</b><span>Institutes a policy of inclusion and services for learners with disabilities.</span></div></li>
+    <li class="pivot"><span class="yr">2024–26</span><div><b>Second Congressional Commission on Education (EDCOM II) reports</b><span><i>Miseducation</i>, <i>Fixing the Foundations</i>, and <i>Turning Point</i> document the condition of Philippine education that today's school leaders are asked to respond to.</span></div></li>
+  </ol>
+
+  <h3 class="sub">Scholars and traditions</h3>
+  <p class="subp">Students read primary policy texts and research syntheses, not summaries or news commentary. Books and journal articles that are not openly available can be accessed through the UPHSD library or your own institutional library.</p>
+  <div class="scholars">
+    <div><h3>Leadership theory and its effects</h3><ul><li><b>Kenneth Leithwood, Alma Harris, and David Hopkins</b><span>strong claims about successful school leadership</span></li><li><b>Viviane Robinson</b><span>student-centered leadership; leadership dimensions and student outcomes</span></li><li><b>Jason Grissom, Anna Egalite, and Constance Lindsay</b><span>how principals affect students and schools</span></li><li><b>Tony Bush</b><span>theories of educational leadership and management</span></li></ul></div>
+    <div><h3>Culture, change, and systems</h3><ul><li><b>Michael Fullan</b><span>right and wrong drivers of whole-system change</span></li><li><b>Edgar Schein</b><span>three levels of organizational culture</span></li><li><b>Beatriz Pont and colleagues (OECD)</b><span>school leadership policy and practice</span></li></ul></div>
+    <div><h3>People and professional learning</h3><ul><li><b>Linda Darling-Hammond, Maria Hyler, and Madelyn Gardner</b><span>features of effective teacher professional development</span></li><li><b>OECD Reviews of School Resources</b><span>human resource policies for schools</span></li></ul></div>
+    <div><h3>Ethics, equity, and community</h3><ul><li><b>The four ethical lenses</b><span>justice, care, critique, and the profession</span></li><li><b>Karen Mapp and Paul Kuttner</b><span>dual capacity-building for family–school partnerships</span></li><li><b>UNESCO Global Education Monitoring Report</b><span>leadership in education: lead for learning</span></li></ul></div>
+    <div><h3>Philippine evidence and standards</h3><ul><li><b>Department of Education</b><span>the PPSSH, the School Improvement Plan, and the Learning Action Cell</span></li><li><b>Second Congressional Commission on Education</b><span>system-wide findings on Philippine education</span></li><li><b>Clarissa David, Jose Ramon Albert, and Jana Flor Vizmanos (PIDS)</b><span>pressures on public school teachers</span></li></ul></div>
+  </div>
+</div></section>
+
+<!-- ============ READINGS ============ -->
+<section id="readings"><div class="wrap">
+  <div class="head">
+    <h2>Required readings</h2>
+    <p>Every required reading is free to open online. If a link fails, search the full title on the publisher's website or email the professor. What to read in each source, and where it is used, is in the <a href="https://drive.google.com/file/d/1jo1rk4WZYF2YQV3e0s-hbDn99TJMF9zz/view" target="_blank" rel="noopener">Required Readings and Reading Guide</a>.</p>
+  </div>
+  <div class="read">
+    <details open>
+      <summary><span>Week 1 <small>&nbsp;Foundations, strategy, and instructional leadership</small></span></summary>
+      <ol>
+        <li>Global Education Monitoring Report Team. (2024). <i>Global education monitoring report 2024/5: Leadership in education – Lead for learning</i>. UNESCO. <a href="https://www.uncclearn.org/wp-content/uploads/library/391406eng.pdf" target="_blank" rel="noopener">Open PDF</a></li>
+        <li>Grissom, J. A., Egalite, A. J., &amp; Lindsay, C. A. (2021). <i>How principals affect students and schools: A systematic synthesis of two decades of research</i>. The Wallace Foundation. <a href="https://www.wallacefoundation.org/knowledge-center/Documents/How-Principals-Affect-Students-and-Schools.pdf" target="_blank" rel="noopener">Open PDF</a></li>
+        <li>Department of Education. (2020). <i>DepEd Order No. 24, s. 2020: National adoption and implementation of the Philippine Professional Standards for School Heads</i>. <a href="https://www.deped.gov.ph/wp-content/uploads/2020/09/DO_s2020_024-.pdf" target="_blank" rel="noopener">Open PDF</a></li>
+        <li>Department of Education. (2015). <i>DepEd Order No. 44, s. 2015: Guidelines on the enhanced School Improvement Planning (SIP) process and the School Report Card (SRC)</i> — School Improvement Plan Guidebook. <a href="https://www.deped.gov.ph/wp-content/uploads/2015/09/DO_s2015_44_0.pdf" target="_blank" rel="noopener">Open PDF</a></li>
+        <li>Robinson, V., Hohepa, M., &amp; Lloyd, C. (2009). <i>School leadership and student outcomes: Identifying what works and why — Best evidence synthesis iteration (BES)</i>. New Zealand Ministry of Education. (Read Chapter 5.) <a href="https://thehub.swa.govt.nz/assets/documents/42429_BES-Leadership-Web_0.pdf" target="_blank" rel="noopener">Open PDF</a></li>
+        <li>Department of Education. (2016). <i>DepEd Order No. 35, s. 2016: The Learning Action Cell (LAC) as a K to 12 Basic Education Program school-based continuing professional development strategy for the improvement of teaching and learning</i>. <a href="https://www.deped.gov.ph/wp-content/uploads/2016/06/DO_s2016_035.pdf" target="_blank" rel="noopener">Open PDF</a></li>
+        <li>Pont, B., Nusche, D., &amp; Moorman, H. (2008). <i>Improving school leadership, Volume 1: Policy and practice</i>. OECD Publishing. <span class="opt">Optional deeper reading.</span> <a href="https://www.oecd.org/en/publications/improving-school-leadership_9789264044715-en.html" target="_blank" rel="noopener">Open page</a></li>
+      </ol>
+    </details>
+    <details>
+      <summary><span>Week 2 <small>&nbsp;Culture, governance, and resources</small></span></summary>
+      <ol>
+        <li>Fullan, M. (2021). <i>The right drivers for whole system success</i> (CSE Leading Education Series No. 01). Centre for Strategic Education. <a href="https://michaelfullan.ca/wp-content/uploads/2021/03/Fullan-CSE-Leading-Education-Series-01-2021R2-compressed.pdf" target="_blank" rel="noopener">Open PDF</a></li>
+        <li>Republic of the Philippines. (2001, August 11). <i>Republic Act No. 9155: Governance of Basic Education Act of 2001</i>. (Read Secs. 5 and 7.) <a href="https://lawphil.net/statutes/repacts/ra2001/ra_9155_2001.html" target="_blank" rel="noopener">Open on LawPhil</a></li>
+        <li>Republic of the Philippines. (1982, September 11). <i>Batas Pambansa Blg. 232: Education Act of 1982</i>. <a href="https://lawphil.net/statutes/bataspam/bp1982/bp_232_1982.html" target="_blank" rel="noopener">Open on LawPhil</a></li>
+        <li>Second Congressional Commission on Education. (2024–2026). <i>Miseducation: The failed system of Philippine education</i> (Year One Report); <i>Fixing the foundations: A matter of national survival</i> (Year Two Report); <i>Turning point: A decade of necessary reforms</i> (Final Report). EDCOM II. <a href="https://edcom2.gov.ph/publications/" target="_blank" rel="noopener">Open page</a></li>
+        <li>Department of Education. (2014, March 6). <i>DepEd Order No. 12, s. 2014: Implementing guidelines on the direct release of Maintenance and Other Operating Expenses (MOOE) allocations of schools to the respective implementing units</i>. (Later revised by DepEd Order No. 8, s. 2019.) <a href="https://deped.gov.ph/?p=7057" target="_blank" rel="noopener">Open page</a></li>
+      </ol>
+    </details>
+    <details>
+      <summary><span>Week 3 <small>&nbsp;People, law, and ethics</small></span></summary>
+      <ol>
+        <li>OECD. (2019). <i>Working and learning together: Rethinking human resource policies for schools</i> (OECD Reviews of School Resources). OECD Publishing. <a href="https://www.oecd.org/en/publications/working-and-learning-together_b7aaf050-en.html" target="_blank" rel="noopener">Open page</a></li>
+        <li>Darling-Hammond, L., Hyler, M. E., &amp; Gardner, M. (2017). <i>Effective teacher professional development</i>. Learning Policy Institute. <a href="https://learningpolicyinstitute.org/product/effective-teacher-professional-development-report" target="_blank" rel="noopener">Open page</a></li>
+        <li>David, C. C., Albert, J. R. G., &amp; Vizmanos, J. F. V. (2019). <i>Pressures on public school teachers and implications on quality</i> (PIDS Policy Notes No. 2019-01). Philippine Institute for Development Studies. <a href="https://pidswebs.pids.gov.ph/CDN/PUBLICATIONS/pidspn1901.pdf" target="_blank" rel="noopener">Open PDF</a></li>
+        <li>Republic of the Philippines. (1966, June 18). <i>Republic Act No. 4670: The Magna Carta for Public School Teachers</i>. <a href="https://lawphil.net/statutes/repacts/ra1966/ra_4670_1966.html" target="_blank" rel="noopener">Open on LawPhil</a></li>
+        <li>Republic of the Philippines. (2022, March 11). <i>Republic Act No. 11650: An Act instituting a policy of inclusion and services for learners with disabilities in support of inclusive education</i>. <a href="https://lawphil.net/statutes/repacts/ra2022/ra_11650_2022.html" target="_blank" rel="noopener">Open on LawPhil</a></li>
+      </ol>
+    </details>
+    <details>
+      <summary><span>Week 4 <small>&nbsp;Data privacy, technology, and community</small></span></summary>
+      <ol>
+        <li>Republic of the Philippines. (2012, August 15). <i>Republic Act No. 10173: Data Privacy Act of 2012</i>. <a href="https://lawphil.net/statutes/repacts/ra2012/ra_10173_2012.html" target="_blank" rel="noopener">Open on LawPhil</a></li>
+        <li>Mapp, K. L., &amp; Kuttner, P. J. (2013). <i>Partners in education: A dual capacity-building framework for family–school partnerships</i>. SEDL. <a href="https://sedl.org/pubs/framework/FE-Cap-Building.pdf" target="_blank" rel="noopener">Open PDF</a></li>
+        <li>Republic of the Philippines. (1998, February 14). <i>Republic Act No. 8525: Adopt-a-School Act of 1998</i>. <a href="https://lawphil.net/statutes/repacts/ra1998/ra_8525_1998.html" target="_blank" rel="noopener">Open on LawPhil</a></li>
+      </ol>
+    </details>
+    <details>
+      <summary><span>Deeper reading <small>&nbsp;Through the library, not required</small></span></summary>
+      <ol>
+        <li>Leithwood, K., Harris, A., &amp; Hopkins, D. (2020). Seven strong claims about successful school leadership revisited. <i>School Leadership &amp; Management, 40</i>(1), 5–22. <span class="opt">Library access.</span></li>
+        <li>Harris, A., &amp; Jones, M. (2020). COVID 19 – school leadership in disruptive times. <i>School Leadership &amp; Management, 40</i>(4), 243–247. <span class="opt">Library access.</span></li>
+        <li>Kools, M., &amp; Stoll, L. (2016). <i>What makes a school a learning organisation?</i> (OECD Education Working Papers No. 137). OECD Publishing. <span class="opt">Library access.</span></li>
+        <li>Bush, T. (2020). <i>Theories of educational leadership and management</i> (5th ed.). SAGE. <span class="opt">Library access.</span></li>
+        <li>Robinson, V. M. J. (2011). <i>Student-centered leadership.</i> Jossey-Bass. <span class="opt">Library access.</span></li>
+        <li>UNESCO. (2023). <i>Guidance for generative AI in education and research.</i> UNESCO. <span class="opt">Library access.</span></li>
+      </ol>
+    </details>
+  </div>
+</div></section>
+
+<!-- ============ GRADING ============ -->
+<section id="grading"><div class="wrap">
+  <div class="head">
+    <h2>How your grade is built</h2>
+    <p>The University's averaging scheme applies. A Midterm Grade for Weeks 1–2 and a Pre-Final Grade for Weeks 3–4 are each built from the same three components, and the Final Grade is their average.</p>
+  </div>
+  <div class="gradegrid">
+    <div>
+      <h3>Midterm Grade, Weeks 1–2</h3>
+      <div class="bars">
+        <div class="bar"><div class="nm">Class standing<small>Recitation, participation, oral reporting, and assignments</small></div><div class="track"><i style="width:40%"></i></div><div class="v">20%</div></div>
+        <div class="bar"><div class="nm">Asynchronous Task 1<small>Leadership Philosophy and Institutional Diagnosis Paper</small></div><div class="track"><i style="width:50%"></i></div><div class="v">25%</div></div>
+        <div class="bar"><div class="nm">Asynchronous Task 2<small>Culture, Policy, and Resource Brief</small></div><div class="track"><i style="width:50%"></i></div><div class="v">25%</div></div>
+        <div class="bar big"><div class="nm">Midterm Examination<small>Weeks 1–2</small></div><div class="track"><i style="width:60%"></i></div><div class="v">30%</div></div>
+      </div>
+    </div>
+    <div>
+      <h3>Pre-Final Grade, Weeks 3–4</h3>
+      <div class="bars">
+        <div class="bar"><div class="nm">Class standing<small>Recitation, participation, oral reporting, and assignments</small></div><div class="track"><i style="width:40%"></i></div><div class="v">20%</div></div>
+        <div class="bar"><div class="nm">Asynchronous Task 3<small>Faculty Development and Succession Plan with Case Analysis</small></div><div class="track"><i style="width:40%"></i></div><div class="v">20%</div></div>
+        <div class="bar big"><div class="nm">Asynchronous Task 4<small>School Leadership Improvement Portfolio with Reflective Commentary</small></div><div class="track"><i style="width:60%"></i></div><div class="v">30%</div></div>
+        <div class="bar"><div class="nm">Final Examination<small>Weeks 3–4, integrative</small></div><div class="track"><i style="width:60%"></i></div><div class="v">30%</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="gradegrid" style="margin-top:16px">
+    <div class="note" style="margin-top:0">
+      <b>The formula.</b>
+      <p class="formula" style="margin:8px 0">Final Grade = (Midterm Grade + Pre-Final Grade) ÷ 2</p>
+      In each period, special projects and research carry 50%, class standing 20%, and the major examination 30%. The individual presentation and the group Companion Module are recorded under class standing.
+      <table class="scale">
+        <tr><td>99–100</td><td>1.00</td><td>Outstanding</td></tr>
+        <tr><td>96–98</td><td>1.25</td><td>Very Satisfactory</td></tr>
+        <tr><td>93–95</td><td>1.50</td><td>Satisfactory</td></tr>
+        <tr><td>90–92</td><td>1.75</td><td></td></tr>
+        <tr><td>87–89</td><td>2.00</td><td>Lowest grade with credit for MAEd</td></tr>
+      </table>
+    </div>
+    <div class="note" style="margin-top:0">
+      <b>What master's work is judged on.</b> A plan does not earn a high grade for being long or ambitious. You must show that the diagnosis is sound, that the evidence comes from your own institution, and that every part of the plan follows from it.
+      <ul class="stds" style="columns:1">
+        <li>Accurate and appropriate use of leadership theory and research</li>
+        <li>Quality of evidence drawn from your own institution</li>
+        <li>Soundness of the diagnosis</li>
+        <li>Coherence between the diagnosis, the strategy, the people plan, and the budget</li>
+        <li>Feasibility in the Philippine setting</li>
+        <li>Attention to law, ethics, equity, inclusion, and data privacy</li>
+        <li>Quality of stakeholder engagement</li>
+        <li>Clarity, organization, and correct APA 7th edition citation</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ STANDARDS ============ -->
+<section id="standards"><div class="wrap">
+  <div class="head">
+    <h2>Standards and syllabus alignment</h2>
+    <p>The course is aligned with national standards for master's education and with the Philippine standards for school heads, and it follows the approved UPHSD Graduate School syllabus for MAEEMNGT 2211 without changing its topic sequence or grading formula.</p>
+  </div>
+  <div class="regs">
+    <article class="level"><span class="lv">CHED</span><h3>CMO No. 15, s. 2019, as amended by CMO No. 21, s. 2025</h3><p>Policies, Standards and Guidelines for Graduate Programs. Outputs call for advanced professional practice: students diagnose a real institution and propose defensible, evidence-based action.</p></article>
+    <article class="level"><span class="lv">Republic Act No. 10968 (2018)</span><h3>Philippine Qualifications Framework, Level 7</h3><p>Master's level: advanced knowledge and skills applied with a high degree of independence in professional work. Students work on a self-selected institution and priority.</p></article>
+    <article class="level"><span class="lv">DepEd</span><h3>Order No. 24, s. 2020: Professional Standards for School Heads</h3><p>Five domains and four career stages. The ten syllabus topics are read against the five domains, and students assess themselves against the standards in Week 1.</p></article>
+  </div>
+  <h3 class="sub">Where each syllabus topic is taught and assessed</h3>
+  <table class="bm">
+    <thead><tr><th>Syllabus topic</th><th>Week and session</th><th>Where it is assessed</th></tr></thead>
+    <tbody><tr><td class="loc" colspan="3">Midterm period, Weeks 1–2</td></tr><tr><td>1. Contemporary Foundations of Educational Leadership</td><td>Week 1, professor-led</td><td>Task 1: leadership philosophy statement</td></tr><tr><td>2. Strategic Leadership and Organizational Development</td><td>Week 1, professor-led</td><td>Task 1: SWOT matrix, PESTLE scan, and priority</td></tr><tr><td>3. Instructional Leadership for Teaching Excellence and Student Success</td><td>Week 1, professor-led</td><td>Task 1: key data and the teaching-and-learning priority</td></tr><tr><td>4. Leading Organizational Culture, Change, and Innovation</td><td>Week 2, Session 1 (Group 1)</td><td>Task 2: culture audit and change strategy</td></tr><tr><td>5. Educational Governance, Policy, and Systems Leadership</td><td>Week 2, Session 2 (Group 2)</td><td>Task 2: policy analysis</td></tr><tr><td>6. Strategic Resource and Financial Leadership</td><td>Week 2, Session 3 (Group 3)</td><td>Task 2: costed budget and reporting plan</td></tr><tr><td class="loc" colspan="3">Pre-Final period, Weeks 3–4</td></tr><tr><td>7. Human Capital Leadership and Talent Development</td><td>Week 3, Session 4 (Group 4)</td><td>Task 3, Part A: faculty development and succession plan</td></tr><tr><td>8. Legal and Ethical Issues in Education Leadership</td><td>Week 3, Sessions 5 and 6 (Groups 5 and 6)</td><td>Task 3, Part B: legal–ethical case analysis</td></tr><tr><td>9. Digital Transformation and Innovation Leadership in Education</td><td>Week 4, Session 7 (Group 7)</td><td>Task 4: technology audit and responsible AI plan</td></tr><tr><td>10. Community and Stakeholder Engagement</td><td>Week 4, Session 8 (Group 8)</td><td>Task 4: stakeholder engagement plan; Leadership Improvement Forum</td></tr></tbody>
+  </table>
+  <p class="bmnote">Syllabus Topic 8 is divided between Sessions 5 and 6, so eight sessions cover the seven topics of Weeks 2 to 4. Source: Course Guide, Sections IV and XVI.</p>
+</div></section>
+
+<!-- ============ POLICIES ============ -->
 <section id="policies"><div class="wrap">
-  <div class="head"><div class="eyebrow">Working together</div><h2>Class <em>policies</em></h2></div>
-  <div class="cols">
-    <div class="card"><h3>Communication</h3><p style="margin:0">Official communication (concerns, submissions, grade inquiries) goes through the professor’s email only.</p><p style="margin:0"><span class="email" id="email">carlo.villalon@perpetualdalta.edu.ph</span><button class="copy" id="copyEmail" type="button">Copy</button></p><p class="small" style="margin:0">The class Facebook group chat is for quick announcements and general engagement.</p></div>
-    <div class="card"><h3>Integrity and AI</h3><p style="margin:0">Submitted work must be your own analysis of your own institution, cited in APA 7th edition. AI tools may help you brainstorm, check language, or organize notes if you disclose the tool and its use at the end of the paper.</p><p class="small" style="margin:0">Never enter learners’ or colleagues’ personal information into an AI tool or public website.</p></div>
-    <div class="card"><h3>Confidentiality</h3><p style="margin:0">When you write or present about your institution, remove the names of learners, colleagues, and parents, and do not share confidential records.</p></div>
+  <div class="head">
+    <h2>Class policies</h2>
+  </div>
+  <div class="pols">
+    <article class="pol">
+      <h3>Communication</h3>
+      <p>Official communication (concerns, submissions, grade inquiries) goes through the professor's email only.</p>
+      <div class="mail"><span id="em">carlo.villalon@perpetualdalta.edu.ph</span><button type="button" id="copy">Copy</button></div>
+      <ul>
+        <li>The four live sessions are held online, on the platform announced by the Graduate School.</li>
+        <li>The class Facebook group chat is for quick announcements and general engagement.</li>
+      </ul>
+    </article>
+    <article class="pol">
+      <h3>Academic integrity and AI</h3>
+      <p>The sources you cite must exist and say what you claim, and the analysis must be yours.</p>
+      <ul>
+        <li><b>Disclose.</b> Add a short note at the end of each paper naming any AI tool you used and what you used it for.</li>
+        <li><b>Support, not replace.</b> AI may help you brainstorm, check language, or organize notes. The analysis, the data, and the reflection must be your own.</li>
+        <li><b>No invented evidence.</b> Invented data or references are treated as academic dishonesty.</li>
+      </ul>
+    </article>
+    <article class="pol">
+      <h3>Confidentiality</h3>
+      <p>When you write or present about your own institution:</p>
+      <ul>
+        <li>Use only data you are permitted to access.</li>
+        <li>Remove the names of learners, colleagues, parents, and officials. Give the school a neutral label if naming it could identify individuals.</li>
+        <li>Do not enter anyone's personal information into an AI tool or a public website.</li>
+      </ul>
+    </article>
   </div>
 </div></section>
 
-<div class="quote"><div class="wrap"><blockquote>Leadership in education is not a position that one waits to be given. It is work done on purpose, <em>with people, on evidence, and for learners.</em></blockquote><cite>Core course philosophy · Course Guide, Section XVII</cite></div></div>
+<div class="quote"><div class="wrap">
+  <blockquote>Leadership in education is not a position that one waits to be given. It is work done on purpose, with people, on evidence, and for learners, and <mark>every teacher already does some of it.</mark></blockquote>
+  <cite>Core course philosophy, Course Guide, Section XVII</cite>
+</div></div>
+
 </main>
-<footer><div class="wrap">Class site maintained by Carlo S. Villalona, LPT, PhD, for Section 4-MAED-EM-H. It is not an official University website. Materials are for use in this class only. <span id="updated"></span></div></footer>
+
+<footer><div class="wrap">
+  <p>Class site maintained by Carlo S. Villalona, LPT, PhD, for MAEEMNGT 2211, Section 4-MAED-EM-H. It is not an official University website. Materials are for use in this class only.</p>
+  <p style="margin-top:10px">For deadlines, this website takes precedence over the PDFs and other course files.</p>
+</div></footer>
 
 <script>
-/* ============ EDIT HERE: course data ============ */
-const D = (id) => "https://drive.google.com/file/d/" + id + "/view";
-const COURSE = {
-  start: [
-    ["Module 4 Course Guide", "Schedule, readings, assessment plan, final portfolio.", D("1pliEi3QiQiYps9k7m_VtoV05N89IYCnE"), "PDF"],
-    ["Orientation and Course Introduction Module", "How the course runs, and an introduction to the subject.", D("1WbmQooHav7U1HuK2dYAUr7U_cZ2RplPs"), "PDF"],
-    ["Orientation slides", "The deck used in the October 10 session.", D("1UNUgk95yvBhJYGtSBjV-JeHXBatAjM0D"), "Slides"],
-    ["Masteral Learner Profile", "Opens in Canva. Fill in the boxes, add a photo, and share before the end of Week 1.", "https://canva.link/9kdg1cctqolx9vk", "Canva"],
-    ["Conference-Style Reporting and Companion Module guide", "Running orders, inquiry questions, and rubrics for October 17, 24, and 31.", "", "Guide"],
-  ],
-  weeks: [
-    { n: 1, sat: "2026-10-10", label: "Oct 10–11", q: "What is educational leadership, and where is my school now?", items: ["Orientation and getting to know you", "Contemporary Foundations of Educational Leadership", "Strategic Leadership and Organizational Development", "Instructional Leadership for Teaching Excellence and Student Success"], mode: "Professor-led session", task: 1 },
-    { n: 2, sat: "2026-10-17", label: "Oct 17–18", q: "How do culture, policy, and resources shape what a leader can do?", items: ["Session 1 (Group 1): Culture, Change, and Innovation", "Session 2 (Group 2): Governance, Policy, and Systems Leadership", "Session 3 (Group 3): Resource and Financial Leadership", "Midterm Examination at the end of the week (Weeks 1–2)"], mode: "Conference-style reporting", task: 2 },
-    { n: 3, sat: "2026-10-24", label: "Oct 24–25", q: "How do leaders develop people and decide rightly?", items: ["Session 4 (Group 4): Human Capital and Talent Development", "Session 5 (Group 5): Educational Law for School Leaders", "Session 6 (Group 6): Ethical Leadership, Equity, and Inclusion"], mode: "Conference-style reporting", task: 3 },
-    { n: 4, sat: "2026-10-31", label: "Oct 31–Nov 1", q: "How do leaders take a school forward, digitally and with its community?", items: ["Session 7 (Group 7): Digital Transformation and AI", "Session 8 (Group 8): Community and Stakeholder Engagement", "Leadership Improvement Forum and course synthesis", "Final Examination at the end of the week (Weeks 3–4, integrative)"], mode: "Conference-style reporting", task: 4 },
-  ],
-  modules: [
-    [1, "2026-10-17", "Leading Organizational Culture, Change, and Innovation", "1fA-9Vn7VoEFLLjijhIxjfH2wThwZgUAR"],
-    [2, "2026-10-17", "Educational Governance, Policy, and Systems Leadership", "1C4LGp-bMMkNrbtfdr4xuHV3jks1KiuCn"],
-    [3, "2026-10-17", "Strategic Resource and Financial Leadership", "1VM-8MIMK9CNuJrXHn9CI0BAMPD--oXso"],
-    [4, "2026-10-24", "Human Capital Leadership and Talent Development", "18vYEGGBHiqzClLBSJjevYMVi8uwJV9sn"],
-    [5, "2026-10-24", "Educational Law for School Leaders", "1OkjcyIKBhlVRRrAclN2O-ui2S2aFpx9l"],
-    [6, "2026-10-24", "Ethical Leadership, Equity, and Inclusion", "1ytni4gO_FYV67sMqFTWCSDINN4Ub3CNQ"],
-    [7, "2026-10-31", "Digital Transformation and Innovation Leadership in Education", "1nYScEtR3FGc70zaxAb5Cf2kIUfD2LQhk"],
-    [8, "2026-10-31", "Community and Stakeholder Engagement", "1Y1PbbWhdcMniz-FFRbcF32JSQZ9pOL00"],
-  ],
-  tasks: [
-    [1, "Leadership Philosophy and Institutional Diagnosis Paper", "1,000–1,500 words plus a SWOT matrix", "2026-10-16", "1YkNaP_vEBDHBcDi7s4FtjS328uvGF5GG"],
-    [2, "Culture, Policy, and Resource Brief", "1,500–2,000 words plus a costed budget", "2026-10-23", "1szabzDcXCxTyl3X3lFdQKvmd1yDZiitT"],
-    [3, "Faculty Development and Succession Plan (draft) with Legal–Ethical Case Analysis", "Two parts: 800–1,000 and 600–800 words", "2026-10-30", "1CwZBsOaShZ8Zs2QswYvvFzkPnfpn3Xh3"],
-    [4, "School Leadership Improvement Portfolio with Reflective Commentary", "15–20 pages plus a 500–700 word commentary", "2026-11-06", "196tazMvM6EAnbRHvN4oTirpst9Z7aWb_"],
-  ],
-  readingGuide: D("1jo1rk4WZYF2YQV3e0s-hbDn99TJMF9zz"),
-  readings: {
-    1: [["UNESCO GEM Report 2024/5: Leadership in education", "https://www.uncclearn.org/wp-content/uploads/library/391406eng.pdf"], ["Grissom, Egalite & Lindsay (2021): How principals affect students and schools", "https://www.wallacefoundation.org/knowledge-center/Documents/How-Principals-Affect-Students-and-Schools.pdf"], ["DepEd Order 24, s. 2020: Philippine Professional Standards for School Heads", "https://www.deped.gov.ph/wp-content/uploads/2020/09/DO_s2020_024-.pdf"], ["DepEd Order 44, s. 2015: School Improvement Plan Guidebook", "https://www.deped.gov.ph/wp-content/uploads/2015/09/DO_s2015_44_0.pdf"], ["Robinson, Hohepa & Lloyd (2009): School leadership and student outcomes, Chapter 5", "https://thehub.swa.govt.nz/assets/documents/42429_BES-Leadership-Web_0.pdf"]],
-    2: [["Fullan (2021): The right drivers for whole system success", "https://michaelfullan.ca/wp-content/uploads/2021/03/Fullan-CSE-Leading-Education-Series-01-2021R2-compressed.pdf"], ["RA 9155: Governance of Basic Education Act, Sections 5 and 7", "https://lawphil.net/statutes/repacts/ra2001/ra_9155_2001.html"], ["EDCOM II reports", "https://edcom2.gov.ph/publications/"], ["DepEd Order 12, s. 2014: School MOOE guidelines", "https://deped.gov.ph/?p=7057"]],
-    3: [["Darling-Hammond, Hyler & Gardner (2017): Effective teacher professional development", "https://learningpolicyinstitute.org/product/effective-teacher-professional-development-report"], ["PIDS (2019): Pressures on public school teachers", "https://pidswebs.pids.gov.ph/CDN/PUBLICATIONS/pidspn1901.pdf"], ["RA 4670: Magna Carta for Public School Teachers", "https://lawphil.net/statutes/repacts/ra1966/ra_4670_1966.html"], ["RA 11650: Inclusive education for learners with disabilities", "https://lawphil.net/statutes/repacts/ra2022/ra_11650_2022.html"]],
-    4: [["RA 10173: Data Privacy Act of 2012", "https://lawphil.net/statutes/repacts/ra2012/ra_10173_2012.html"], ["Mapp & Kuttner (2013): Partners in education", "https://sedl.org/pubs/framework/FE-Cap-Building.pdf"], ["RA 8525: Adopt-a-School Act of 1998", "https://lawphil.net/statutes/repacts/ra1998/ra_8525_1998.html"]],
-  },
-  updated: "October 9, 2026",
-};
-/* ============ end of course data ============ */
-
-const $ = (id) => document.getElementById(id);
-const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const link = (text, url) => url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(text)}</a>` : `${esc(text)} <span class="chip">to be posted</span>`;
-// today's date in Manila, as YYYY-MM-DD
-const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Manila", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
-const addDays = (iso, n) => { const d = new Date(iso + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
-const fmt = (iso, o) => new Date(iso + "T00:00:00Z").toLocaleDateString("en-US", { timeZone: "UTC", ...o });
-const nice = (iso) => fmt(iso, { weekday: "short", month: "short", day: "numeric" });
-const daysTo = (iso) => Math.round((new Date(iso + "T00:00:00Z") - new Date(today + "T00:00:00Z")) / 864e5);
-
-// a week runs from the Monday before its Saturday to the following Sunday
-const current = COURSE.weeks.find((w) => today >= addDays(w.sat, -5) && today <= addDays(w.sat, 1));
-const nextTask = COURSE.tasks.find((t) => t[3] >= today);
-
-$("track").innerHTML = COURSE.weeks.map((w) => `<li class="${current === w ? "now" : today > addDays(w.sat, 1) ? "past" : ""}"><b>Week ${w.n}</b>${esc(w.label)}</li>`).join("");
-
-$("startList").innerHTML = COURSE.start.map(([t, d, u, kind]) => u
-  ? `<a class="card" href="${esc(u)}" target="_blank" rel="noopener"><div class="kind">${esc(kind || "File")}</div><h3>${esc(t)}</h3><div class="small">${esc(d)}</div><div class="go">Open →</div></a>`
-  : `<div class="card off"><div class="kind">${esc(kind || "File")}</div><h3>${esc(t)}</h3><div class="small">${esc(d)}</div><div><span class="chip">to be posted</span></div></div>`).join("");
-
-$("weeks").innerHTML = COURSE.weeks.map((w) => {
-  const t = COURSE.tasks[w.task - 1];
-  return `<article class="wk${current === w ? " current" : ""}"><div class="dot" aria-hidden="true">${w.n}</div><div class="body">
-  <div class="meta"><span>Week ${w.n} · ${esc(w.label)}</span><span class="chip gold">${esc(w.mode)}</span>${current === w ? '<span class="chip live">this week</span>' : ""}</div>
-  <h3>${esc(w.q)}</h3><div class="small">Saturday, ${esc(fmt(w.sat, { month: "long", day: "numeric" }))} · 7:00–11:00 AM</div>
-  <ul>${w.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>
-  <p class="taskline"><strong>Task ${t[0]}:</strong> ${link(t[1], t[4] ? D(t[4]) : "")} <span class="small">· due ${esc(nice(t[3]))}</span></p></div></article>`;
-}).join("");
-
-$("modRows").innerHTML = COURSE.modules.map(([n, d, t, id]) => {
-  const inner = `<div class="n">${n}</div><div class="kind">${esc(nice(d))} · Group ${n}</div><h3>${esc(t)}</h3>${id ? '<div class="go">Open →</div>' : '<div><span class="chip">to be posted</span></div>'}`;
-  return id ? `<a class="card mod" href="${esc(D(id))}" target="_blank" rel="noopener">${inner}</a>` : `<div class="card mod off">${inner}</div>`;
-}).join("");
-
-$("taskRows").innerHTML = COURSE.tasks.map(([n, t, what, due, id]) => {
-  const k = daysTo(due);
-  const chip = k < 0 ? '<span class="chip done">closed</span>' : k <= 7 ? `<span class="chip due">${k === 0 ? "due today" : "due in " + k + (k === 1 ? " day" : " days")}</span>` : '<span class="chip">upcoming</span>';
-  return `<article class="card task"><div class="toprow"><div class="cal" aria-label="Due ${esc(nice(due))}"><span>${esc(fmt(due, { month: "short" }))}</span><b>${esc(fmt(due, { day: "numeric" }))}</b></div>${chip}</div>
-  <div class="kind">Task ${n} · due ${esc(nice(due))}</div><h3>${esc(t)}</h3><div class="small">${esc(what)}</div>${id ? `<a class="go" href="${esc(D(id))}" target="_blank" rel="noopener">Open guidelines →</a>` : ""}</article>`;
-}).join("");
-
-$("readLead").innerHTML = `Read the week’s required readings before starting the Sunday task. What to read in each, and where it is used, is in the ${link("Required Readings and Reading Guide", COURSE.readingGuide)}.`;
-let readWeek = (current || COURSE.weeks[0]).n;
-function showReads() {
-  $("readTabs").innerHTML = COURSE.weeks.map((w) => `<button type="button" role="tab" id="tab-w${w.n}" data-w="${w.n}" aria-selected="${w.n === readWeek}">Week ${w.n} <span style="font-weight:400">· ${esc(w.label)}</span></button>`).join("");
-  $("readList").innerHTML = COURSE.readings[readWeek].map(([t, u]) => `<li><span>${link(t, u)}</span></li>`).join("");
-}
-$("readTabs").addEventListener("click", (e) => { const b = e.target.closest("button[data-w]"); if (b) { readWeek = +b.dataset.w; showReads(); $("tab-w" + readWeek).focus(); } });
-showReads();
-
-// "now" card
-(function () {
-  const first = COURSE.weeks[0];
-  let h = "";
-  if (today < addDays(first.sat, -5)) h = `<div class="eyebrow">Before the module</div><h3>Classes begin ${esc(nice(first.sat))}, 7:00 AM</h3><div>Read the Course Guide and complete your Masteral Learner Profile.</div>`;
-  else if (current) h = `<div class="eyebrow">This week · Week ${current.n}</div><h3>${esc(current.q)}</h3><div>Live session ${esc(nice(current.sat))}, 7:00–11:00 AM.${nextTask ? ` Next deadline: Task ${nextTask[0]}, ${esc(nice(nextTask[3]))}.` : ""}</div><a href="#schedule">See the week →</a>`;
-  else if (nextTask) h = `<div class="eyebrow">Sessions completed</div><h3>Task ${nextTask[0]} is due ${esc(nice(nextTask[3]))}</h3><a href="#tasks">See the task →</a>`;
-  else h = `<div class="eyebrow">Module 4</div><h3>The module has ended</h3><div>Thank you for the work you put into it.</div>`;
-  $("now").innerHTML = h;
+(function(){
+  // copy the professor's email
+  var b=document.getElementById('copy'),e=document.getElementById('em');
+  b.addEventListener('click',function(){
+    var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)};
+    if(navigator.clipboard){navigator.clipboard.writeText(e.textContent).then(done,function(){})}
+    else{var r=document.createRange();r.selectNode(e);var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');done()}catch(x){}}
+  });
+  // highlight the current section in the nav
+  var links=[].slice.call(document.querySelectorAll('.nav li a')),map={};
+  links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){links.forEach(function(a){a.classList.remove('on')});var a=map[x.target.id];if(a){a.classList.add('on')}}})},{rootMargin:'-45% 0px -50% 0px'});
+    Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+  }
+  // mark the current week, Monday to Sunday, in Manila time
+  try{
+    var today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Manila',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+    var shift=function(iso,n){var d=new Date(iso+'T00:00:00Z');d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10)};
+    [].forEach.call(document.querySelectorAll('.week[data-sat]'),function(w){var s=w.getAttribute('data-sat');if(today>=shift(s,-5)&&today<=shift(s,1))w.classList.add('now')});
+  }catch(x){}
 })();
-
-$("updated").textContent = "Last updated " + COURSE.updated + ".";
-$("copyEmail").addEventListener("click", function () {
-  const el = $("email"), btn = this;
-  const select = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
-  (navigator.clipboard ? navigator.clipboard.writeText(el.textContent) : Promise.reject()).then(() => { btn.textContent = "Copied"; }).catch(() => { select(); btn.textContent = "Selected"; });
-});
 </script>
+
 </body>
 </html>
