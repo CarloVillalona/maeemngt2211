@@ -354,6 +354,7 @@ footer p{margin:0;max-width:52em}
 .dom g{transform-origin:220px 205px;animation:grow .9s cubic-bezier(.2,.7,.2,1) both}
 .dom g:nth-of-type(2){animation-delay:.08s}.dom g:nth-of-type(3){animation-delay:.16s}.dom g:nth-of-type(4){animation-delay:.24s}.dom g:nth-of-type(5){animation-delay:.32s}.dom g:nth-of-type(6){animation-delay:.4s}
 @media (prefers-reduced-motion:reduce){.dom g{animation:none}}
+.slot .sub{font-family:var(--display);font-weight:700;font-size:14px;color:var(--plum);white-space:nowrap;text-underline-offset:3px;text-decoration-color:var(--marigold);text-decoration-thickness:2px}
 .week.now{border-color:var(--plum);box-shadow:0 0 0 2px var(--plum)}
 .week.now header .wk::after{content:"This week";font-family:var(--display);font-size:13px;font-weight:700;background:var(--marigold);color:var(--plum);padding:3px 10px;border-radius:999px;margin-left:10px;vertical-align:middle}
 .exam p{margin:8px 0 0;font-size:16px;color:#f8eae8}
@@ -364,7 +365,8 @@ footer p{margin:0;max-width:52em}
 .strand .sub2{font-size:15px;color:var(--muted);margin:0 0 12px}
 .strand details{margin-bottom:0}
 .task .pct small{display:block;font-family:var(--display);font-size:13px;font-weight:600;color:var(--muted);text-align:right;line-height:1.2}
-.task .go{display:inline-block;margin-top:16px;font-family:var(--display);font-weight:700;font-size:15px;color:var(--plum);text-underline-offset:4px;text-decoration-color:var(--marigold);text-decoration-thickness:2px}
+.tbtns{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:18px}.tbtns .btn{font-size:15px;padding:10px 20px}
+.task .go{display:inline-block;font-family:var(--display);font-weight:700;font-size:15px;color:var(--plum);text-underline-offset:4px;text-decoration-color:var(--marigold);text-decoration-thickness:2px}
 .gradegrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .gradegrid h3{margin:0 0 12px}
 .formula{font-family:var(--head);font-weight:700;font-size:1.25rem;color:var(--plum)}
@@ -593,25 +595,25 @@ footer p{margin:0;max-width:52em}
       <header><div class="wk">Week 1</div><div class="dt">October 10–11</div><h4>What is educational leadership, and where is my school now?</h4></header>
       <div class="slot liveb"><span class="tag live">Live</span><span class="when">Saturday, October 10, 7:00–11:00 AM</span>Orientation, then professor-led sessions on the foundations of educational leadership, strategic leadership, and instructional leadership.</div>
       <div class="slot"><span class="tag self">Self-study</span><span class="when">Saturday, 4 hours</span>Week 1 readings and review of the Orientation Module.</div>
-      <div class="slot dueb"><span class="when" style="margin-top:0">Sunday, October 11, 8 hours</span><b>Asynchronous Task 1: Leadership Philosophy and Institutional Diagnosis Paper</b><br><span class="tag due">Due Friday, October 16</span><br>Share your Masteral Learner Profile this week as well.</div>
+      <div class="slot dueb"><span class="when" style="margin-top:0">Sunday, October 11, 8 hours</span><b>Asynchronous Task 1: Leadership Philosophy and Institutional Diagnosis Paper</b><br><span class="tag due">Due Friday, October 16</span> <a class="sub" href="https://drive.google.com/drive/folders/1xv6J5edohyxzHrxBptfkJMyZKGf1IlTq" target="_blank" rel="noopener">Submission Folder</a><br>Share your Masteral Learner Profile this week as well.</div>
     </article>
     <article class="week" data-sat="2026-10-17">
       <header><div class="wk">Week 2</div><div class="dt">October 17–18</div><h4>How do culture, policy, and resources shape what a leader can do?</h4></header>
       <div class="slot liveb"><span class="tag live">Live</span><span class="when">Saturday, October 17, 7:00–11:00 AM</span>Sessions 1–3, reported by Groups 1–3: culture and change, governance and policy, resources and finance.</div>
       <div class="slot"><span class="tag self">Self-study</span><span class="when">Saturday, 4 hours</span>Session 1–3 companion modules and Week 2 readings.</div>
-      <div class="slot dueb"><span class="when" style="margin-top:0">Sunday, October 18, 8 hours</span><b>Asynchronous Task 2: Culture, Policy, and Resource Brief</b><br><span class="tag due">Due Friday, October 23</span></div>
+      <div class="slot dueb"><span class="when" style="margin-top:0">Sunday, October 18, 8 hours</span><b>Asynchronous Task 2: Culture, Policy, and Resource Brief</b><br><span class="tag due">Due Friday, October 23</span> <a class="sub" href="https://drive.google.com/drive/folders/1r9hge6OEVc17E0oCumgq-egQ1-i3AU_N" target="_blank" rel="noopener">Submission Folder</a></div>
     </article>
     <article class="week" data-sat="2026-10-24">
       <header><div class="wk">Week 3</div><div class="dt">October 24–25</div><h4>How do leaders develop people and decide rightly?</h4></header>
       <div class="slot liveb"><span class="tag live">Live</span><span class="when">Saturday, October 24, 7:00–11:00 AM</span>Sessions 4–6, reported by Groups 4–6: human capital, educational law, and ethics, equity, and inclusion.</div>
       <div class="slot"><span class="tag self">Self-study</span><span class="when">Saturday, 4 hours</span>Session 4–6 companion modules and Week 3 readings.</div>
-      <div class="slot dueb"><span class="when" style="margin-top:0">Sunday, October 25, 8 hours</span><b>Asynchronous Task 3: Faculty Development and Succession Plan (Draft) with Legal–Ethical Case Analysis</b><br><span class="tag due">Due Friday, October 30</span></div>
+      <div class="slot dueb"><span class="when" style="margin-top:0">Sunday, October 25, 8 hours</span><b>Asynchronous Task 3: Faculty Development and Succession Plan (Draft) with Legal–Ethical Case Analysis</b><br><span class="tag due">Due Friday, October 30</span> <a class="sub" href="https://drive.google.com/drive/folders/1WXG-kEfiDsswI8JH5tXpV7gS-a0a0jsn" target="_blank" rel="noopener">Submission Folder</a></div>
     </article>
     <article class="week" data-sat="2026-10-31">
       <header><div class="wk">Week 4</div><div class="dt">October 31 – November 1</div><h4>How do leaders take a school forward, digitally and with its community?</h4></header>
       <div class="slot liveb"><span class="tag live">Live</span><span class="when">Saturday, October 31, 7:00–11:00 AM</span>Sessions 7–8, reported by Groups 7–8, then the Leadership Improvement Forum and the course synthesis.</div>
       <div class="slot"><span class="tag self">Self-study</span><span class="when">Saturday, 4 hours</span>Session 7–8 companion modules and Week 4 readings.</div>
-      <div class="slot dueb"><span class="when" style="margin-top:0">Sunday, November 1, 8 hours</span><b>Asynchronous Task 4: School Leadership Improvement Portfolio with Reflective Commentary</b><br><span class="tag due">Due Friday, November 6</span></div>
+      <div class="slot dueb"><span class="when" style="margin-top:0">Sunday, November 1, 8 hours</span><b>Asynchronous Task 4: School Leadership Improvement Portfolio with Reflective Commentary</b><br><span class="tag due">Due Friday, November 6</span> <a class="sub" href="https://drive.google.com/drive/folders/1QDOCTCqH9mp7cC1YJUYADfhxhoo-d06y" target="_blank" rel="noopener">Submission Folder</a></div>
     </article>
   </div>
   <div class="key"><span><span class="tag live">Live</span> synchronous, online</span><span><span class="tag self">Self-study</span> at your own pace</span><span><span class="tag due">Due</span> the Friday after each Sunday session</span></div>
@@ -664,31 +666,31 @@ footer p{margin:0;max-width:52em}
       <h3>Leadership Philosophy and Institutional Diagnosis Paper</h3>
       <p>Choose the institution you will study all month, normally your own workplace. State your leadership philosophy, grounded in two leadership theories and the Philippine Professional Standards for School Heads. Then diagnose the institution with a SWOT matrix, a short PESTLE scan, and at least four indicators, and name one priority for improving teaching and learning.</p>
       <div class="meta"><span class="tag self">1,000–1,500 words plus a SWOT matrix, APA 7</span><span class="tag self">100 points</span><span class="tag self">Assigned Sunday, October 11</span><span class="tag due">Due Friday, October 16</span></div>
-      <a class="go" href="https://drive.google.com/file/d/1YkNaP_vEBDHBcDi7s4FtjS328uvGF5GG/view" target="_blank" rel="noopener">Open the Task 1 guidelines and rubric</a>
+      <div class="tbtns"><a class="btn dark" href="https://drive.google.com/drive/folders/1xv6J5edohyxzHrxBptfkJMyZKGf1IlTq" target="_blank" rel="noopener">Submit Task 1</a><a class="go" href="https://drive.google.com/file/d/1YkNaP_vEBDHBcDi7s4FtjS328uvGF5GG/view" target="_blank" rel="noopener">Open the guidelines and rubric</a></div>
     </article>
     <article class="task">
       <div class="top"><span class="tag due">Asynchronous Task 2</span><span class="pct">25%<small>of the Midterm Grade</small></span></div>
       <h3>Culture, Policy, and Resource Brief</h3>
       <p>Examine the three conditions that decide whether your priority can be achieved. Audit the culture using Schein's three levels, analyze one policy that governs your institution in its original text, propose a change strategy that names the people and the likely resistance, and cost the first year in a one-page budget.</p>
       <div class="meta"><span class="tag self">1,500–2,000 words plus a costed budget, APA 7</span><span class="tag self">100 points</span><span class="tag self">Assigned Sunday, October 18</span><span class="tag due">Due Friday, October 23</span></div>
-      <a class="go" href="https://drive.google.com/file/d/1szabzDcXCxTyl3X3lFdQKvmd1yDZiitT/view" target="_blank" rel="noopener">Open the Task 2 guidelines and rubric</a>
+      <div class="tbtns"><a class="btn dark" href="https://drive.google.com/drive/folders/1r9hge6OEVc17E0oCumgq-egQ1-i3AU_N" target="_blank" rel="noopener">Submit Task 2</a><a class="go" href="https://drive.google.com/file/d/1szabzDcXCxTyl3X3lFdQKvmd1yDZiitT/view" target="_blank" rel="noopener">Open the guidelines and rubric</a></div>
     </article>
     <article class="task">
       <div class="top"><span class="tag due">Asynchronous Task 3</span><span class="pct">20%<small>of the Pre-Final Grade</small></span></div>
       <h3>Faculty Development and Succession Plan (Draft) with Legal–Ethical Case Analysis</h3>
       <p>Part A designs a one-year faculty development plan for the teacher learning need behind your priority, protects teachers' time, and adds a succession component. Part B analyzes one real legal–ethical dilemma from your experience, with all names removed: the facts, the rule that applies, at least two ethical lenses, the options, and your decision.</p>
       <div class="meta"><span class="tag self">Part A 800–1,000 words, Part B 600–800 words</span><span class="tag self">100 points</span><span class="tag self">Structured peer feedback</span><span class="tag self">Assigned Sunday, October 25</span><span class="tag due">Due Friday, October 30</span></div>
-      <a class="go" href="https://drive.google.com/file/d/1CwZBsOaShZ8Zs2QswYvvFzkPnfpn3Xh3/view" target="_blank" rel="noopener">Open the Task 3 guidelines and rubric</a>
+      <div class="tbtns"><a class="btn dark" href="https://drive.google.com/drive/folders/1WXG-kEfiDsswI8JH5tXpV7gS-a0a0jsn" target="_blank" rel="noopener">Submit Task 3</a><a class="go" href="https://drive.google.com/file/d/1CwZBsOaShZ8Zs2QswYvvFzkPnfpn3Xh3/view" target="_blank" rel="noopener">Open the guidelines and rubric</a></div>
     </article>
     <article class="task">
       <div class="top"><span class="tag due">Asynchronous Task 4</span><span class="pct">30%<small>of the Pre-Final Grade</small></span></div>
       <h3>School Leadership Improvement Portfolio with Reflective Commentary</h3>
       <p>The major final performance task. Revise Tasks 1 to 3 from feedback, add a technology audit and responsible AI plan, a stakeholder engagement and communication plan, a legal, ethical, equity, and data privacy review, and monitoring and evaluation. Assemble everything as one plan for one institution, and close with a reflective commentary.</p>
       <div class="meta"><span class="tag self">15–20 pages plus a 500–700 word commentary</span><span class="tag self">100 points</span><span class="tag self">Sixteen parts, see the guidelines</span><span class="tag self">Assigned Sunday, November 1</span><span class="tag due">Due Friday, November 6</span></div>
-      <a class="go" href="https://drive.google.com/file/d/196tazMvM6EAnbRHvN4oTirpst9Z7aWb_/view" target="_blank" rel="noopener">Open the Task 4 guidelines and rubric</a>
+      <div class="tbtns"><a class="btn dark" href="https://drive.google.com/drive/folders/1QDOCTCqH9mp7cC1YJUYADfhxhoo-d06y" target="_blank" rel="noopener">Submit Task 4</a><a class="go" href="https://drive.google.com/file/d/196tazMvM6EAnbRHvN4oTirpst9Z7aWb_/view" target="_blank" rel="noopener">Open the guidelines and rubric</a></div>
     </article>
   </div>
-  <p class="note"><b>Submitting.</b> Each task is due on the Friday after its Sunday asynchronous session, before the next live session. Save it as <b>AT[number]_LastName_FirstName</b>, for example AT1_DelaCruz_Juan, as a Word document or PDF in APA 7th edition, and upload it to the shared course folder announced by the professor. For Tasks 1 to 3, post a short summary on the discussion board and reply substantively to two classmates. End every paper with a short note on whether and how you used AI. Where a PDF gives a different deadline, the dates on this website apply.</p>
+  <p class="note"><b>Submitting.</b> Each task is due on the Friday after its Sunday asynchronous session, before the next live session. Save it as <b>AT[number]_LastName_FirstName</b>, for example AT1_DelaCruz_Juan, as a Word document or PDF in APA 7th edition, and upload it to that task's own Submission Folder using the Submit button on its card. For Tasks 1 to 3, post a short summary on the discussion board and reply substantively to two classmates. End every paper with a short note on whether and how you used AI. Where a PDF gives a different deadline, the dates on this website apply.</p>
 </div></section>
 
 <!-- ============ CONFERENCE ============ -->
