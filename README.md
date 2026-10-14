@@ -10,6 +10,7 @@ Maintained by Carlo S. Villalona, LPT, PhD · carlo.villalon@perpetualdalta.edu.
 |---|---|
 | `index.html` | The whole site: content, styles, and script |
 | `assets/professor.jpg` | The professor's portrait |
+| `templates/UPHSD_Graduate_School_Slide_Template.pptx` | Slide template for reporting presentations |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
 | `README.md` | This guide |
 
