@@ -172,6 +172,8 @@ h3{font-size:1.3rem;font-weight:700}
 .strand li{margin-bottom:6px}
 .strand .btn{margin-top:auto;text-align:center;font-size:15px;padding:11px 16px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.two>*,.three>*{min-width:0}
+.panel code{overflow-wrap:anywhere}
 .panel{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:var(--r);padding:26px}
 .panel h3{margin-bottom:14px}
 .run{list-style:none;margin:0;padding:0;font-size:16px}
@@ -434,6 +436,10 @@ footer p{margin:0;max-width:52em}
 <aside class="notice" style="background:var(--plum);color:#fff;border-bottom:4px solid var(--marigold)" aria-label="Schedule update"><div class="wrap">
   <strong style="color:var(--marigold)">Update, October 22: adjusted schedule for the University health break (October 30 – November 2).</strong>
   <span>Extended sessions on Saturday, October 24, 6:00–11:00 AM and Sunday, October 25, 6:00–9:30 AM; no class on October 31. All remaining asynchronous tasks are due on or before Friday, October 30. There is no separate midterm examination; its 30% share goes to the Final Examination on October 28–29.</span>
+</div></aside>
+<aside class="notice" style="background:var(--plum);color:#fff;border-bottom:4px solid var(--marigold)" aria-label="Reminder: upload your presentation slides"><div class="wrap">
+  <strong style="color:var(--marigold)">Reminder, October 31: upload your presentation slides now.</strong>
+  <span>Individual oral presentation scores and feedback cannot be completed until your slides are in the right folder. Upload them as soon as possible: <a href="https://drive.google.com/drive/folders/11ZncytwBVyWyljy5VOfWe6bAHgT7UmYa" target="_blank" rel="noopener" style="color:#fff;font-weight:700">October 17 folder</a> · <a href="https://drive.google.com/drive/folders/1p24aDPKgRUjYTB2tjO53X5BBxLblseZj" target="_blank" rel="noopener" style="color:#fff;font-weight:700">October 24 folder</a> · <a href="https://drive.google.com/drive/folders/1EDCuRinK-ckTkSJYhwRLCSLykME11xuP" target="_blank" rel="noopener" style="color:#fff;font-weight:700">October 25 folder</a>. Missed a live presentation? See the <a href="#recorded" style="color:#fff;font-weight:700">recorded presentation guidelines</a>.</span>
 </div></aside>
 <aside class="notice" aria-label="Important note on deadlines"><div class="wrap">
   <strong>Deadlines: this website is the official reference.</strong>
@@ -901,10 +907,42 @@ footer p{margin:0;max-width:52em}
   </div>
 
   <h3 class="csub">Submit your slides and Companion Module</h3>
-  <div class="three">
-    <div class="panel"><h3>Slides, October 24</h3><p class="fine" style="margin-top:0">Groups 4, 5, 6, and 7. Upload before your presentation, one file per presenter: <code>Group[No]-LastName-SlidesPresentation</code></p><div class="btns" style="margin-top:16px"><a class="btn solid" href="https://drive.google.com/drive/folders/1p24aDPKgRUjYTB2tjO53X5BBxLblseZj" target="_blank" rel="noopener">Open the Oct 24 folder</a></div></div>
-    <div class="panel"><h3>Slides, October 25</h3><p class="fine" style="margin-top:0">Groups 3 and 8. Upload before your presentation, one file per presenter: <code>Group[No]-LastName-SlidesPresentation</code></p><div class="btns" style="margin-top:16px"><a class="btn solid" href="https://drive.google.com/drive/folders/1EDCuRinK-ckTkSJYhwRLCSLykME11xuP" target="_blank" rel="noopener">Open the Oct 25 folder</a></div></div>
+  <p class="fine" style="margin:0 0 18px"><b>Upload your slides as soon as possible.</b> Your individual oral presentation score and feedback cannot be completed until your slides are in your reporting day's folder.</p>
+  <div class="two" style="margin-bottom:16px">
+    <div class="panel"><h3>Slides, October 17</h3><p class="fine" style="margin-top:0">Groups 1 and 2. One file per presenter: <code>Group[No]-LastName-SlidesPresentation</code></p><div class="btns" style="margin-top:16px"><a class="btn solid" href="https://drive.google.com/drive/folders/11ZncytwBVyWyljy5VOfWe6bAHgT7UmYa" target="_blank" rel="noopener">Open the Oct 17 folder</a></div></div>
+    <div class="panel"><h3>Slides, October 24</h3><p class="fine" style="margin-top:0">Groups 4, 5, 6, and 7. One file per presenter: <code>Group[No]-LastName-SlidesPresentation</code></p><div class="btns" style="margin-top:16px"><a class="btn solid" href="https://drive.google.com/drive/folders/1p24aDPKgRUjYTB2tjO53X5BBxLblseZj" target="_blank" rel="noopener">Open the Oct 24 folder</a></div></div>
+    <div class="panel"><h3>Slides, October 25</h3><p class="fine" style="margin-top:0">Groups 3 and 8. One file per presenter: <code>Group[No]-LastName-SlidesPresentation</code></p><div class="btns" style="margin-top:16px"><a class="btn solid" href="https://drive.google.com/drive/folders/1EDCuRinK-ckTkSJYhwRLCSLykME11xuP" target="_blank" rel="noopener">Open the Oct 25 folder</a></div></div>
     <div class="panel"><h3>Companion Module</h3><p class="fine" style="margin-top:0">All groups. One file per group, revised from the questions raised in your session: <code>Group[No]-CompanionModule</code></p><div class="btns" style="margin-top:16px"><a class="btn solid" href="https://drive.google.com/drive/folders/1ejKzN-HbXHoaFaSMb7i2ZBWFNerxdZi9" target="_blank" rel="noopener">Open the module folder</a></div></div>
+  </div>
+
+  <h3 class="csub" id="recorded">Recorded presentations for those who did not present live</h3>
+  <p class="fine" style="margin:0 0 18px">If you could not present during the live sessions, complete the requirement through a recorded submission. The live reporting presentation is graded individually; the Companion Module stays a separate group grade. <b>Deadline for both: on or before Friday, October 30, 2026.</b> The question-and-answer portion is waived for everyone, including those who already presented live.</p>
+  <div class="two">
+    <div class="panel">
+      <h3>Individual conference-style presentation</h3>
+      <ul class="rules">
+        <li><b>Submit both formats.</b> A PowerPoint file (.pptx) with your voice narration embedded and playing correctly, and the same narrated presentation exported as a video (.mp4) with visible slides and clear audio. Sending only one format leaves the requirement incomplete.</li>
+        <li><b>Five slides at most</b>, clear, organized, and academically appropriate, within the 10-minute presentation time.</li>
+        <li>Answer your <b>originally assigned inquiry question</b> under your group's topic (see the Reporting Guide), with critical analysis and application of educational leadership concepts.</li>
+        <li>Cite at least <b>two scholarly or official sources</b> and discuss a concrete Philippine school, policy, program, or institution.</li>
+        <li>Remove the names of learners, colleagues, parents, and other individuals.</li>
+        <li><b>You stay in your original group</b> for the Companion Module (5–8 pages, Word or module-formatted PDF, saved as <code>Group[No]-CompanionModule</code>). Keep coordinating with your groupmates and contribute your inquiry response to the group's module.</li>
+        <li><b>File names</b> (keep your original group number): <code>Group[No]-LastName-SlidesPresentation.pptx</code> and <code>Group[No]-LastName-VideoPresentation.mp4</code>, for example <code>Group2-DeGala-VideoPresentation.mp4</code>.</li>
+      </ul>
+      <div class="btns" style="margin-top:18px"><a class="btn solid" href="https://drive.google.com/drive/folders/1PNXKcSYnkEm7sepDt62HgOtwWCYiylD-" target="_blank" rel="noopener">Open the recorded presentations folder</a></div>
+    </div>
+    <div class="panel">
+      <h3>Leadership Improvement Forum</h3>
+      <p class="fine" style="margin-top:0">Each group presents one member's Leadership Improvement Plan with its stakeholder engagement plan. Students who have not yet presented may complete it by recording. Those who already presented need only upload their documents.</p>
+      <ul class="rules" style="margin-top:12px">
+        <li><b>Submit both formats</b>, narrated .pptx and the same presentation as .mp4, plus the Leadership Improvement Plan and stakeholder engagement plan.</li>
+        <li><b>Cover six points:</b> the problem and its evidence; the strategy and why it suits the school's culture and resources; the cost and source of funds; how teachers, parents, learners, and partners are consulted and informed; legal, ethical, equity, and data privacy safeguards; and two indicators of success.</li>
+        <li><b>Subfolder:</b> <code>Leadership_Improvement_Forum_[GroupNumber]_[Surnames]</code></li>
+        <li><b>Files:</b> <code>LIF_[GroupNumber]_[Surname]_[Topic]_PPTX.pptx</code>, <code>LIF_[GroupNumber]_[Surname]_[Topic]_MP4.mp4</code>, and <code>LIF_[GroupNumber]_[Surname]_Improvement_and_Stakeholder_Engagement_Plan.docx</code>. If you are presenting on your own to complete a missed presentation, write <code>Individual</code> in place of the group number.</li>
+        <li>Check that every file opens and the audio is clear before uploading.</li>
+      </ul>
+      <div class="btns" style="margin-top:18px"><a class="btn solid" href="https://drive.google.com/drive/folders/1IjeAITacgnB7Hs-yA6v-z9It8g4iQ5Ol" target="_blank" rel="noopener">Open the Forum folder</a></div>
+    </div>
   </div>
 
   <div class="btns" style="margin-top:28px">
